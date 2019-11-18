@@ -11,15 +11,15 @@
 	<style>
 		html,body {
 			margin:0;
-			
-			width:100vw;
+			scroll-behavior:smooth;
+			width:100%;
 		
 		}
 		
 		.main-nav {
 			height:100px;
 			width:100%;
-			background:white;
+			
 			box-sizing:border-box;
 			position:fixed;
 			top:0;
@@ -53,7 +53,7 @@
 			padding:15px 10px 15px 10px;
 			cursor:pointer;
 			font-weight:600;
-			border-left:solid 2px blue;
+			border-left:solid 2px rgb(23,92,255);
 			float:left;
 		}
 		
@@ -93,6 +93,7 @@
 			color:black;
 			font-family:sans-serif;
 			font-weight:lighter;
+			cursor:default;
 		}
 		
 		.first-page h1 span {
@@ -182,9 +183,35 @@
 			position:absolute;
 			bottom:30px;
 			right:calc(50% + 220px);
-			
+			opacity:1;
 			width:200px;
 			height:200px;
+		}
+		
+		
+		@keyframes arrowfade{
+			0% {opacity:1;}
+			100% {opacity:0;}
+		}
+		
+		@keyframes arrowshow{
+			0% {opacity:0;}
+			100% {opacity:1;}
+		}
+		
+		a {
+			text-decoration:none;
+			color:inherit;
+		}
+		
+		a:visited {
+			color:inherit;
+		}
+		
+		
+		.about-page {
+			height:1000vh;
+			width:100%;
 		}
 		
 		
@@ -204,11 +231,11 @@
 		
 		
 			<ul>
-				<li>About</li>
-				<li>Projects</li>
-				<li>Resume</li>
-				<li>Contact</li>
-				<li>Github</li>
+				<a href=#about><li>About</li></a>
+				<a><li>Projects</li></a>
+				<li><a>Resume</a></li>
+				<li><a>Contact</a></li>
+				<li><a>Github</a></li>
 			
 			</ul>
 		</nav>
@@ -217,7 +244,7 @@
 		
 		
 		
-		<div class="first-page">
+		<div class="first-page" >
 			<h1>
 				<span>H</span>
 				<span>e</span>
@@ -244,8 +271,8 @@
 			
 		<svg version="1.1" viewBox="0 0 317.5 317.5" id="arrow">
 			<g transform="translate(0 20.5)">
-				<path d="m85.832 159.94 58.034 68.776 52.143-71.289" fill="none" stroke="#175cff" stroke-width="10px"/>
-				<path d="m143.87 225.89c-1.378-34.451-2.7561-68.902-3.8585-94.809s-1.9293-43.27 21.222-64.768c23.151-21.497 70.28-47.129 117.41-72.76" fill="none" stroke="#175cff" stroke-width="10px"/>
+				<path d="m85.832 159.94 58.034 68.776 52.143-71.289" fill="none" stroke="rgb(166,192,255)" stroke-width="10px"/>
+				<path d="m143.87 225.89c-1.378-34.451-2.7561-68.902-3.8585-94.809s-1.9293-43.27 21.222-64.768c23.151-21.497 70.28-47.129 117.41-72.76" fill="none" stroke="rgb(166,192,255)" stroke-width="10px"/>
 			</g>
 		</svg>
 
@@ -253,11 +280,24 @@
 		</div>
 	
 	
-	
+		<section class="about-page" id="about">
+
+		
+		</section>
 	
 	
 	
 	</body>
-	
+	<script>
+		console.log(document.getElementById("arrow"));
+		window.onscroll=function(){
+			if (document.documentElement.scrollTop>100 || window.scrollY>100) {
+				document.getElementById("arrow").style.animation="arrowfade 0.5s linear forwards";
+			} else {
+				document.getElementById("arrow").style.animation="arrowshow 0.5s linear backwards";
+			}
+		
+		}
+	</script>
 	
 </html>
