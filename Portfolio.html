@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Running Forever</title>
+		<meta name="description" content="Girl Running On Mario Landscape">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	
+	
+	<style>
+		html,body {
+			margin:0;
+			background:white;
+			width:100vw;
+			
+		}
+		
+		.main-nav {
+			height:80px;
+			width:100%;
+			background:none;
+			box-sizing:border-box;
+			position:fixed;
+			top:0;
+			font-family:sans-serif;
+			
+		}
+		
+		.main-nav ul {
+			margin:0;
+			margin-right:50px;
+			padding:0;
+			box-sizing:border-box;
+			top:50%;
+			transform:translateY(-50%);
+			position:absolute;
+			right:0;
+		}
+		
+		.main-nav ul li {
+			font-size:22px;
+			list-style-type:none;
+			display:inline;
+			box-sizing:border-box;
+			color:blue;
+			background:none;
+			height:100%;
+			padding:5px;
+			cursor:pointer;
+		}
+		
+		.main-nav ul li:hover {
+			color:white;
+			background:rgb(255,100,0);
+		}
+		
+		
+		.first-page {
+			width:100%;
+			height:calc(100vh);
+			background:white;
+			box-sizing:border-box;
+			
+			
+			font-family:sans-serif;
+			
+		}
+		
+		.first-page h1 {
+			text-align:center;
+			box-sizing:border-box;
+			border-bottom:solid 2px blue;
+			border-right:solid 2px blue;
+			height:130px;
+			width:420px;
+			padding:20px;
+			padding-bottom:10px;
+			margin:0;
+			font-size:85px;
+			position:absolute;
+			top:50%;
+			left:50%;
+			transform:translate(-50%,-50%);
+			display:flex;
+			color:black;
+			
+		}
+		
+		.first-page h1 span {
+			transform:rotateY(90deg);
+			animation:spin .4s linear forwards;
+			filter:blur(10px);
+		}
+		
+		@keyframes spin {
+			0% {transform:rotateY(90deg);}
+			100% {transform:none;filter:none;}
+		}
+		
+		
+		.first-page h1 span:nth-child(1) {
+			animation-delay:0s;
+		}
+		
+		.first-page h1 span:nth-child(2) {
+			animation-delay:0.2s;
+		}
+		.first-page h1 span:nth-child(3) {
+			animation-delay:0.4s;
+		}
+		.first-page h1 span:nth-child(4) {
+			animation-delay:0.6s;
+		}
+		.first-page h1 span:nth-child(5) {
+			animation-delay:0.8s;
+		}
+		.first-page h1 span:nth-child(6) {
+			animation-delay:1s;
+		}
+		.first-page h1 span:nth-child(7) {
+			animation-delay:1.2s;
+		}
+		
+		
+		.side-word {
+			position:absolute;
+			left:calc(100% + 15px);
+			top:-34px;
+			width:280px;
+			color:blue;
+			font-size:30px;
+			transform-origin:0 100%;
+			transform:rotate(90deg);
+			animation:fadein 1.2s linear forwards;
+			
+			filter:blur(4px);
+		}
+		
+		@keyframes fadein {
+			0% {filter:blur(4px);}
+			100% {filter:none;}
+		}
+		
+		
+	
+	</style>
+	
+	
+	<body>
+	
+		<nav class="main-nav" >
+			<ul>
+				<li>About</li>
+				<li>Projects</li>
+				<li>Resume</li>
+				<li>Contact</li>
+				<li>Github</li>
+			
+			</ul>
+		</nav>
+	
+		<div class="first-page">
+			<h1>
+				<span>W</span>
+				<span>e</span>
+				<span>l</span>
+				<span>c</span>
+				<span>o</span>
+				<span>m</span>
+				<span>e</span>
+			
+			<div class="side-word">
+				I MAKE WEBSITES
+			</div>
+			
+			</h1>
+		</div>
+	
+	
+	
+	
+	
+	
+	</body>
+	
+	
+</html>
