@@ -3,8 +3,9 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Running Forever</title>
-		<meta name="description" content="Girl Running On Mario Landscape">
+		<title>Seemaab's Portfolio</title>
+		<meta name="description" content="Seemaab's Portfolio. Clean-cut, simple, and engaging. Let me make your next website.
+		Whether you're selling something, want to start blogging, or simple gain an online presence. I'm your man.">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
@@ -21,8 +22,8 @@
 		
 		.main-nav {
 			height:100px;
-			width:100%;
-			
+			width:100vw;
+			border:none;
 			box-sizing:border-box;
 			position:fixed;
 			top:0;
@@ -33,7 +34,7 @@
 		
 		.main-nav ul {
 			margin:0;
-			margin-right:50px;
+			margin-right:40px;
 			margin-top:20px;
 			padding:0;
 			box-sizing:border-box;
@@ -61,7 +62,7 @@
 		}
 		
 		.main-nav ul li:hover {
-			color:rgb(255, 255, 153);
+			color:white;
 			background:rgb(23,92,255);
 		}
 		
@@ -183,26 +184,7 @@
 			cursor:pointer;
 			background:rgb(23,92,255);
 		}
-		
-		#arrow {
-			position:absolute;
-			bottom:30px;
-			right:calc(50% + 220px);
-			opacity:1;
-			width:200px;
-			height:200px;
-		}
-		
-		
-		@keyframes arrowfade{
-			0% {opacity:1;}
-			100% {opacity:0;}
-		}
-		
-		@keyframes arrowshow{
-			0% {opacity:0;}
-			100% {opacity:1;}
-		}
+
 		
 		a {
 			text-decoration:none;
@@ -217,8 +199,8 @@
 		.about-page {
 			position:relative;
 			width:100%;
-			height:100vh;
-			background:white;
+			height:calc(100vh - 100px);
+			background:rgb(240,240,240);
 			display:flex;
 			flex-direction:column;
 			justify-content:space-around;
@@ -230,16 +212,18 @@
 		.who-box {
 			font-family:sans-serif;
 			color:black;
-			width:600px;
+			width:550px;
 			box-sizing:border-box;
-			background:rgba(255,255,170,1);
+			
 			padding:30px 30px 30px 30px;
 			overflow:hidden;
-			
+			border-radius:30px;
 			font-family: 'Anton', sans-serif;
 			position:relative;
 			opacity:0;
 			left:-50vw;
+			border-top:solid 5px rgb(23,92,255);
+			border-bottom:solid 5px rgb(23,92,255);
 		}
 		
 		@keyframes whodrag{
@@ -265,8 +249,8 @@
 		
 		.who-box p {
 			margin:0;
-			margin-top:30px;
-			font-size:25px;
+			
+			font-size:23px;
 			line-height:40px;
 			text-indent:2em;
 			
@@ -282,12 +266,83 @@
 			height:100%;
 			width:100%;
 		}
+		
+		.projects-page {
+			height:calc(100vh - 100px);
+			width:100%;
+			box-sizing:border-box;
+		}
+		
+		.contact-page {
+			height:calc(100vh - 100px);
+			width:100%;
+			background:rgb(23,92,255);
+			display:flex;
+			flex-direction:column;
+			align-items:center;
+			justify-content:center;
+		}
+		
+		
+		.contact-page h2 {
+			margin:0;
+			font-family:'Anton', sans-serif;
+			font-size:70px;
+			height:90px;
+		}
+		
+		.contact-page h3 {
+			margin:0;
+			margin-bottom:100px;
+			margin-top:100px;
+			font-family: 'Courgette', cursive;
+			font-size:50px;
+			color:rgb(255,255,170);
+		}
+		
+		#phone-svg {
+			height:100px;
+			width:100px;
+		}
+		
+		#email-svg {
+			height:100px;
+			width:100px;
+		}
+		
+		.phone-div {
+			text-align:center;
+		}
+		
+		.email-div {
+		text-align:center;
+		}
+		
+		.contact-symbol-div {
+			width:500px;
+			display:flex;
+			flex-direction:row;
+			justify-content:space-between;
+			font-size:20px;
+			font-family: 'Courgette', cursive;
+			letter-spacing:2px;
+			padding:20px;
+			border: solid 2px rgb(255,255,170);
+		}
+		
+		.contact-symbol-div p {
+			color:rgb(255,255,170);
+			margin:0;
+		}
+		
+		
+		
 	</style>
 	
 	
 	<body>
 		
-		<nav class="main-nav" >
+		<nav class="main-nav" id="main-nav">
 			
 			<svg version="1.1" viewBox="0 0 32 32" id="company-logo">
 				 <g transform="translate(0,-265)">
@@ -298,11 +353,11 @@
 		
 		
 		
-			<ul>
+			<ul id="option-list">
 				<a href=#about><li>About</li></a>
-				<a><li>Projects</li></a>
-				<li><a>Resume</a></li>
-				<li><a>Contact</a></li>
+				<a href=#projects><li>Projects</li></a>
+				
+				<a href=#contact><li>Contact</li></a>
 				<li><a>Github</a></li>
 			
 			</ul>
@@ -330,25 +385,53 @@
 				</div>	
 			</h1>
 			
-			<svg version="1.1" viewBox="0 0 317.5 317.5" id="arrow">
-				<g transform="translate(0 20.5)">
-					<path d="m85.832 159.94 58.034 68.776 52.143-71.289" fill="none" stroke="rgb(166,192,255)" stroke-width="10px"/>
-					<path d="m143.87 225.89c-1.378-34.451-2.7561-68.902-3.8585-94.809s-1.9293-43.27 21.222-64.768c23.151-21.497 70.28-47.129 117.41-72.76" fill="none" stroke="rgb(166,192,255)" stroke-width="10px"/>
-				</g>
-			</svg>
+			
 		</div>
 	
 	
 		<section class="about-page" id="about">
 			<div class="who-box" id="who-box">
 				<h2>Who I Am</h2>
-				<p>A front-end developer proudly from Chicago. I can make your next big website or React application. Get to know me by checking out my resume and projects.
-				Send me some feedback or give me an idea. If you can benefit from my skills, please don't hesitate to <a href=#><u>Contact Me</u></a>. </p>
+				<p>A front-end developer from Chicago. I can make your next big website or React application. Get to know me by checking out my resume and projects.
+				Send me some feedback or give me an idea. If you can benefit from my skills, please don't hesitate to <a href=#contact><u>Contact Me</u></a>. </p>
 				
-			</div>
+			</div>				
+		</section>
+		
+		<section class="projects-page" id="projects">
 			
+		</section>
+		
+		<section class="contact-page" id="contact">
+			<h2>Get in touch !</h2>
+			<h3>For any reason !</h3>
+			
+			
+			
+			<div class="contact-symbol-div">
+				<div class="phone-div">
+					<svg width="250" height="250" version="1.1" viewBox="0 0 66.146 66.146" id="phone-svg">
+						 <g transform="translate(0 -230.85)">
+						  <path d="m13.99 278.32c-0.34917-0.10053-0.59855-0.2976-0.76478-0.60435l-0.1462-0.26981v-7.5306l0.2099-0.36908c0.95857-1.6854 6.4424-8.5358 8.8728-11.084l0.51863-0.54375 8.56e-4 -1.1938c0.0011-1.686-0.12536-1.5951 2.219-1.5951 1.4602 0 1.5884 7e-3 1.7966 0.10329 0.34208 0.15762 0.3637 0.23646 0.36464 1.3299l8.56e-4 0.96834h9.6029v-2.0566l0.17013-0.13164c0.09357-0.0724 0.26415-0.15001 0.37906-0.17244 0.11492-0.0224 0.86598-0.0408 1.669-0.0408 1.2825 0 1.4926 0.0115 1.7275 0.0949 0.14706 0.0522 0.29869 0.14513 0.33694 0.20657 0.0498 0.0799 0.06956 0.44966 0.06956 1.2995v1.1878l0.56157 0.59409c2.818 2.9813 8.4428 10.064 9.004 11.338 0.05292 0.12011 0.0653 1.0246 0.05321 3.8734-0.01467 3.4521-0.02304 3.7314-0.11708 3.9233-0.12805 0.26126-0.34179 0.46912-0.62879 0.61156l-0.22463 0.11146-17.718 0.01c-14.668 8e-3 -17.759-2e-3 -17.958-0.0595zm12.988-7.4182c0.14333-0.036 0.31648-0.14356 0.4784-0.29702 0.5048-0.47844 0.52328-1.1095 0.04641-1.5853-0.57155-0.57024-1.5354-0.50204-1.9985 0.14139-0.13763 0.19126-0.15491 0.26274-0.15491 0.64067 0 0.38977 0.01418 0.44395 0.16943 0.64709 0.31876 0.41709 0.89326 0.5955 1.4591 0.45314zm5.426-0.0872c0.97276-0.46734 0.84844-1.8198-0.19556-2.1276-0.57522-0.16961-1.2309 0.0746-1.5075 0.5614-0.58137 1.0235 0.59016 2.1009 1.703 1.5662zm5.1944 0.0203c0.99268-0.42507 0.94652-1.7367-0.07496-2.1303-0.2546-0.0981-0.73205-0.0849-1.0017 0.0278-0.47416 0.19805-0.81081 0.74862-0.73265 1.1982 0.14072 0.8093 1.0131 1.2453 1.8094 0.90435zm-10.42-4.0404c0.75776-0.37928 0.89194-1.2619 0.27804-1.829-0.56802-0.52467-1.4818-0.44894-1.9413 0.1609-0.19849 0.2634-0.25853 0.78798-0.12399 1.0833 0.29604 0.64982 1.1192 0.91916 1.7873 0.58479zm5.3214-0.0327c0.34452-0.20967 0.53153-0.50002 0.56067-0.87047 0.03178-0.40387-0.09318-0.70004-0.40789-0.96682-0.63621-0.53931-1.634-0.35024-2.0021 0.37934-0.27004 0.53527 0.0023 1.2508 0.57864 1.5197 0.35314 0.16481 0.94582 0.13602 1.2707-0.0617zm5.0514 0.0886c0.555-0.21321 0.865-0.76547 0.73722-1.3134-0.0823-0.35296-0.3186-0.63115-0.67472-0.79433-0.62741-0.28753-1.3702-0.0687-1.6854 0.49639-0.33612 0.60278-0.04949 1.3418 0.62424 1.6094 0.25669 0.10198 0.73576 0.10289 0.99861 2e-3zm-10.322-4.0937c0.14926-0.0839 0.3202-0.24385 0.42118-0.3942 0.14522-0.2162 0.16958-0.30246 0.16737-0.59254-0.0045-0.5896-0.35958-1.0031-0.97873-1.1397-0.55182-0.12175-1.1359 0.13923-1.4105 0.63027-0.13982 0.24999-0.14041 0.71736-0.0012 0.9991 0.12664 0.2564 0.50643 0.56457 0.78352 0.63575 0.31044 0.0798 0.7317 0.0224 1.0184-0.1387zm5.1667 0.0421c0.42733-0.20222 0.67521-0.58135 0.67521-1.0327 0-0.66012-0.54061-1.1538-1.2635-1.1538-1.4973 0-1.7362 1.9528-0.28079 2.2952 0.23043 0.0542 0.63054 4e-3 0.86912-0.10876zm5.0409 0.0769c0.21754-0.0594 0.34741-0.14051 0.53929-0.33678 0.31196-0.31908 0.40537-0.63254 0.31018-1.0408-0.08823-0.37832-0.51526-0.77295-0.93714-0.86602-0.5458-0.12041-1.1095 0.10226-1.3968 0.55182-0.12897 0.20177-0.15754 0.30734-0.15754 0.58216 0 0.54546 0.32394 0.95106 0.88952 1.1137 0.30994 0.0892 0.41297 0.0885 0.7525-4e-3zm-24.919-1.1051c-1.8107-0.14867-2.5416-0.80934-2.6765-2.4192l-0.03572-0.42638 9.2545 0.0264-0.0185 0.36152c-0.04037 0.78913-0.25164 1.3312-0.68189 1.7496-0.33001 0.32089-0.74868 0.51467-1.3621 0.63043-0.46901 0.0885-3.6715 0.14397-4.4799 0.0776zm35.508-0.1596c-0.25338-0.0243-0.6131-0.0801-0.79939-0.12402-1.12-0.26388-1.7012-0.98349-1.7559-2.174l-0.01657-0.36151h9.266l-0.01847 0.33568c-0.07146 1.3012-0.68996 2.003-1.9843 2.2517-0.48365 0.0929-3.924 0.14581-4.6914 0.0721zm-38.148-4.1231c0-0.67788 0.15187-2.0111 0.31267-2.7449 0.54487-2.4864 1.5775-4.289 3.3736-5.8891 2.4187-2.1547 5.9806-3.4625 11.032-4.0505 4.987-0.58051 12.376-0.49997 16.758 0.18267 5.4985 0.85652 9.081 2.6428 11.231 5.5998 1.2357 1.6997 1.9579 3.9765 2.0854 6.5739l0.03847 0.78454h-9.222l-0.02782-0.16786c-0.01528-0.0924-0.05534-0.38863-0.08906-0.65847-0.14556-1.1657-0.4792-2.3233-0.90057-3.1245-1.0294-1.9574-2.6758-2.8599-5.8389-3.2008-1.8242-0.19661-11.182-0.24167-12.664-0.061-1.4642 0.17859-2.5701 0.46149-3.4098 0.87233-1.961 0.95944-3.1139 2.8797-3.4733 5.7851l-0.06868 0.55519h-9.1374z" 
+						  fill="rgb(255,255,170)" stroke-width=".053854"/>
+						 </g>
+					</svg>
 
-					
+
+					<p>(773) 616-2391</p>
+				</div>
+				
+				<div class="email-div">
+					<svg width="250" height="250" version="1.1" viewBox="0 0 66.146 66.146" id="email-svg" >
+						 <g transform="translate(0 -230.85)">
+						  <path d="m15.099 274.96c-1.4982-0.30125-2.9387-1.3397-3.6224-2.6112-0.64114-1.1924-0.61484-0.71899-0.58846-10.594l0.0235-8.8024 0.19635-0.50554c0.63528-1.6357 1.8533-2.7448 3.6023-3.2802l0.5909-0.18088h34.357l0.5909 0.18088c1.749 0.53536 2.967 1.6445 3.6023 3.2802l0.19635 0.50554 0.02352 8.8024c0.02637 9.871 0.05231 9.4022-0.58594 10.589-0.61944 1.1521-1.7402 2.0346-3.194 2.5152l-0.5487 0.18138-17.052 0.0139c-14.319 0.0117-17.138-3e-3 -17.592-0.0947zm34.693-2.6118c0.82759-0.35758 1.417-1.0788 1.56-1.9087l0.05575-0.32362-5.2986-3.6619c-3.3549-2.3186-5.3325-3.6376-5.391-3.5958-1.9233 1.3748-6.0625 4.1557-6.4657 4.3439-1.0511 0.49051-2.2937 0.52043-3.4057 0.082-0.31657-0.12481-4.8947-3.192-6.6054-4.4253-0.13294-0.0958-10.67 7.1972-10.67 7.385 0 0.28124 0.25518 0.92314 0.50528 1.271 0.30258 0.4209 0.77194 0.73841 1.3772 0.93164 0.41787 0.13341 1.2424 0.13931 17.153 0.12284l16.714-0.0173zm-26.851-10.335c0-0.0321-2.1083-1.5154-4.685-3.296l-4.685-3.2376v13.067l4.685-3.2376c2.5768-1.7807 4.685-3.2639 4.685-3.296zm28.448-2.3e-4v-6.5334l-4.6878 3.2396c-2.5783 1.7818-4.6761 3.2722-4.6616 3.312 0.02006 0.0555 9.233 6.4846 9.3284 6.5097 0.01161 3e-3 0.0211-2.9345 0.0211-6.5279zm-17.873 4.1684c0.17518-0.07 4.2726-2.8594 9.1053-6.1987l8.7868-6.0713-0.05581-0.32396c-0.14304-0.83029-0.73233-1.5514-1.5601-1.909l-0.47158-0.20378h-33.681l-0.47158 0.20376c-0.82776 0.35765-1.417 1.0788-1.5601 1.9091l-0.0558 0.32405 8.8286 6.0999c6.2477 4.3166 8.9465 6.1375 9.232 6.2285 0.49206 0.15686 1.4377 0.12779 1.9037-0.0585z" 
+							fill="rgb(255,255,170)" stroke-width=".081027"/>
+						 </g>
+					</svg>
+
+					<p>seemanwi@gmail.com</p>
+				</div>
+			</div>
 		</section>
 	
 	
@@ -359,6 +442,15 @@
 		window.onscroll=function(){
 			if (document.documentElement.scrollTop>=document.documentElement.clientHeight*.6 || window.scrollY>=window.innerHeight*.6) {
 				document.getElementById("who-box").style.animation="whodrag .5s cubic-bezier(0.2,0.9,0.9,0.9) forwards";
+			}
+			if (document.documentElement.scrollTop<document.documentElement.clientHeight-100 || window.scrollY<window.innerHeight-100) {
+				document.getElementById("main-nav").style.backgroundColor="rgb(255,255,170)";
+			}
+			if (document.documentElement.scrollTop>=document.documentElement.clientHeight-100 || window.scrollY>=window.innerHeight-100) {
+				document.getElementById("main-nav").style.backgroundColor="rgb(240,240,240)";
+			}
+			if (document.documentElement.scrollTop>=document.documentElement.clientHeight*3-300 || window.scrollY>=window.innerHeight*3-300) {
+				document.getElementById("main-nav").style.backgroundColor="rgb(23,92,255)";
 			}
 			
 		}
