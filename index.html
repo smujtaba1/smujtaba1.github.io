@@ -222,8 +222,7 @@
 			position:relative;
 			opacity:0;
 			left:-50vw;
-			border-top:solid 5px rgb(23,92,255);
-			border-bottom:solid 5px rgb(23,92,255);
+			
 		}
 		
 		@keyframes whodrag{
@@ -274,8 +273,9 @@
 		}
 		
 		.contact-page {
-			height:calc(100vh - 100px);
+			min-height:calc(100vh - 100px);
 			width:100%;
+			
 			background:rgb(23,92,255);
 			display:flex;
 			flex-direction:column;
@@ -293,21 +293,21 @@
 		
 		.contact-page h3 {
 			margin:0;
-			margin-bottom:100px;
-			margin-top:100px;
+			margin-bottom:50px;
+			margin-top:10px;
 			font-family: 'Courgette', cursive;
 			font-size:50px;
 			color:rgb(255,255,170);
 		}
 		
 		#phone-svg {
-			height:100px;
-			width:100px;
+			height:70px;
+			width:70px;
 		}
 		
 		#email-svg {
-			height:100px;
-			width:100px;
+			height:70px;
+			width:70px;
 		}
 		
 		.phone-div {
@@ -327,7 +327,9 @@
 			font-family: 'Courgette', cursive;
 			letter-spacing:2px;
 			padding:20px;
-			border: solid 2px rgb(255,255,170);
+			border-radius:30px;
+			border-top:solid 3px rgb(255,255,170);
+			border-bottom:solid 3px rgb(255,255,170);
 		}
 		
 		.contact-symbol-div p {
@@ -404,7 +406,7 @@
 		
 		<section class="contact-page" id="contact">
 			<h2>Get in touch !</h2>
-			<h3>For any reason !</h3>
+			<h3>For any reason</h3>
 			
 			
 			
