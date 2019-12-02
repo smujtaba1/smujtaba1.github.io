@@ -22,7 +22,7 @@
 		}
 		
 		html,body {
-			
+			scroll-behavior:smooth;
 			width:100%;
 			height:100%;
 			
@@ -131,6 +131,24 @@
 			margin-top:100px;
 			margin-bottom:100px;
 			font-size:60px;
+			color:#5151C4;
+		}
+		
+		.progress-box {
+			
+			height:20px;
+			width:200px;
+			margin-bottom:30px;
+			display:flex;
+			justify-content:space-around;
+		}
+		
+		.progress-circle {
+			height:20px;
+			width:20px;
+			border:solid 2px #A927FF;
+			border-radius:50%;
+			background:none;
 		}
 		
 		
@@ -143,19 +161,13 @@
 			align-items:center;
 			justify-content:space-around;
 		}
+		
 		.project-box {
 			width:400px;
 			height:400px;
-			
-			
 			overflow:hidden;
-			
 		}
-		
-		
-		
-		
-		
+				
 		.card-box {
 			width:1600px;
 			display:flex;
@@ -163,10 +175,7 @@
 		
 			
 		}
-		
-		
-		
-		
+
 		.project-card {
 			border:solid 5px #5151C4;
 			height:400px;
@@ -176,6 +185,7 @@
 			align-items:center;
 			justify-content:flex-start;
 			color:#5151C4;
+			border-radius:20px;
 		}
 		
 		.project-card h3 {
@@ -207,12 +217,18 @@
 			position:absolute;
 			bottom:50px;
 			background:white;
-			padding:10px 40px;
+			padding:5px 10px;
 			border:solid 3px #00BAFF;
-			font-size:30px;
+			font-size:26px;
 			color:#5151C4;
-			
+			transition:background .5s,box-shadow .5s;
 		}
+		
+		.project-card button:hover {
+			background:#00BAFF;
+			box-shadow:0 0 20px 0px #A927FF;
+		}
+		
 		
 		.contact {
 			background:#5151C4;
@@ -240,7 +256,7 @@
 
 		.contact-box h2 {
 			font-size:60px;
-			font-weight:900;
+			
 		}
 		
 		.contact-box div {
@@ -308,8 +324,8 @@
 				<div class="landing-name">
 					<h1><span>I'm</span> <span>Seemaab</span></h1>
 					<div>A Web Developer</div>
-					<a href=#><button>Projects</button></a>
-					<a href=#><button>Contact</button></a>
+					<a href=#projects><button>Projects</button></a>
+					<a href=#contact><button>Contact</button></a>
 				</div>
 				<div class="landing-image">
 					<svg  viewBox="0 0 739.186 577.922" id="skyline"><defs>
@@ -400,8 +416,16 @@
 		
 		
 		
-		<section class="projects">
+		<section class="projects" id="projects">
 			<h1>Projects</h1>
+			
+			<div class="progress-box">
+				<div class="progress-circle"></div>
+				<div class="progress-circle"></div>
+				<div class="progress-circle"></div>
+				<div class="progress-circle"></div>
+			</div>
+			
 			<div class="arrow-box">
 				<svg width="50px" viewBox="0 0 103.065 82.79" id="left-arrow">
 					<path d="M1386.221,1872.558l-101.541,40.932,101.541,40.931" 
@@ -449,7 +473,7 @@
 		
 		
 		
-		<section class="contact">
+		<section class="contact" id="contact">
 			<div class="contact-box">
 				<h2>Contact Me</h2>
 				<div>seemanwi@gmail.com</div>
@@ -459,7 +483,7 @@
 	</body>
 	<script>
 		let card=document.getElementById("card-box");
-		
+		document.getElementsByClassName("progress-circle")[0].style.backgroundColor='#A927FF';
 		let left=document.getElementById("left-arrow");
 		left.onclick=moveLeft;
 		function moveLeft () {
@@ -467,7 +491,26 @@
 				card.style.left=parseInt(window.getComputedStyle(card)['left'])+400+"px";
 			}
 			
-			
+			switch (parseInt(window.getComputedStyle(card)['left'])) {
+				case 0:
+					
+				
+					document.getElementsByClassName("progress-circle")[0].style.backgroundColor='#A927FF';
+					document.getElementsByClassName("progress-circle")[1].style.backgroundColor='white';
+					break;
+					
+				case -400:
+				
+					document.getElementsByClassName("progress-circle")[1].style.backgroundColor='#A927FF';
+					document.getElementsByClassName("progress-circle")[2].style.backgroundColor='white';
+					break;
+					
+				case -800:
+				
+					document.getElementsByClassName("progress-circle")[2].style.backgroundColor='#A927FF';
+					document.getElementsByClassName("progress-circle")[3].style.backgroundColor='white';
+					break;
+			}
 		}
 		
 		
@@ -478,6 +521,28 @@
 				card.style.left=parseInt(window.getComputedStyle(card)['left'])-400+"px";
 			}
 			
+			switch (parseInt(window.getComputedStyle(card)['left'])) {
+				
+					
+				case -400:
+				
+					document.getElementsByClassName("progress-circle")[1].style.backgroundColor='#A927FF';
+					document.getElementsByClassName("progress-circle")[0].style.backgroundColor='white';
+					break;
+					
+				case -800:
+				
+					document.getElementsByClassName("progress-circle")[2].style.backgroundColor='#A927FF';
+					document.getElementsByClassName("progress-circle")[1].style.backgroundColor='white';
+					break;
+					
+				case -1200:
+					
+				
+					document.getElementsByClassName("progress-circle")[3].style.backgroundColor='#A927FF';
+					document.getElementsByClassName("progress-circle")[2].style.backgroundColor='white';
+					break;
+			}
 			
 		}
 		
