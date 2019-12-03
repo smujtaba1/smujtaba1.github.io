@@ -162,6 +162,10 @@
 			justify-content:space-around;
 		}
 		
+		
+		.arrow-box svg {
+			width:50px;
+		}
 		.project-box {
 			width:400px;
 			height:400px;
@@ -226,7 +230,7 @@
 		
 		.project-card button:hover {
 			background:#00BAFF;
-			box-shadow:0 0 20px 0px #A927FF;
+			box-shadow:0 0 20px 0px #00BAFF;
 		}
 		
 		
@@ -310,6 +314,40 @@
 			}
 		}
 		
+		
+		
+		@media only screen and (max-width:400px) {
+			.landing-name h1 {
+				font-size:40px;
+			}
+			
+			.landing-name div {
+				font-size:23px;
+			}
+			
+			.arrow-box {
+				width:320px;
+				height:300px;
+			}
+			
+			.arrow-box svg {
+				width:30px;
+			}
+			
+			.project-box {
+				height:300px;
+				width:240px;
+			}
+			
+			.card-box {
+				width:960px;
+			}
+			
+			.project-card {
+				height:300px;
+				width:240px;
+			}
+		}
 		
 	</style>
 	
@@ -427,7 +465,7 @@
 			</div>
 			
 			<div class="arrow-box">
-				<svg width="50px" viewBox="0 0 103.065 82.79" id="left-arrow">
+				<svg viewBox="0 0 103.065 82.79" id="left-arrow">
 					<path d="M1386.221,1872.558l-101.541,40.932,101.541,40.931" 
 						transform="translate(-1283.342 -1872.094)" fill="none" stroke="#00BAFF" stroke-width="5px"/>
 				</svg>
@@ -464,7 +502,7 @@
 						</div>
 					</div>
 				</div>
-				<svg width="50px"  viewBox="0 0 103.065 82.79" id="right-arrow">
+				<svg viewBox="0 0 103.065 82.79" id="right-arrow">
 					<path d="M1386.221,1872.558l-101.541,40.932,101.541,40.931" 
 					transform="translate(1386.408 1954.884) rotate(180)" fill="none" stroke="#00BAFF" stroke-width="5px"/>
 				</svg>
@@ -482,13 +520,14 @@
 		</section>
 	</body>
 	<script>
+		let projectCard = document.getElementsByClassName('project-card')[0];
 		let card=document.getElementById("card-box");
 		document.getElementsByClassName("progress-circle")[0].style.backgroundColor='#A927FF';
 		let left=document.getElementById("left-arrow");
 		left.onclick=moveLeft;
 		function moveLeft () {
 			if (parseInt(window.getComputedStyle(card)['left'])<0) {
-				card.style.left=parseInt(window.getComputedStyle(card)['left'])+400+"px";
+				card.style.left=parseInt(window.getComputedStyle(card)['left'])+parseInt(window.getComputedStyle(projectCard)['width'])+"px";
 			}
 			
 			switch (parseInt(window.getComputedStyle(card)['left'])) {
@@ -499,13 +538,13 @@
 					document.getElementsByClassName("progress-circle")[1].style.backgroundColor='white';
 					break;
 					
-				case -400:
+				case parseInt(window.getComputedStyle(projectCard)['width'])*(-1):
 				
 					document.getElementsByClassName("progress-circle")[1].style.backgroundColor='#A927FF';
 					document.getElementsByClassName("progress-circle")[2].style.backgroundColor='white';
 					break;
 					
-				case -800:
+				case parseInt(window.getComputedStyle(projectCard)['width'])*(-2):
 				
 					document.getElementsByClassName("progress-circle")[2].style.backgroundColor='#A927FF';
 					document.getElementsByClassName("progress-circle")[3].style.backgroundColor='white';
@@ -517,26 +556,26 @@
 		let right=document.getElementById("right-arrow");
 		right.onclick=moveRight;
 		function moveRight () {
-			if (parseInt(window.getComputedStyle(card)['left'])>-1200) {
-				card.style.left=parseInt(window.getComputedStyle(card)['left'])-400+"px";
+			if (parseInt(window.getComputedStyle(card)['left'])>parseInt(window.getComputedStyle(projectCard)['width'])*-3) {
+				card.style.left=parseInt(window.getComputedStyle(card)['left'])-parseInt(window.getComputedStyle(projectCard)['width'])+"px";
 			}
 			
 			switch (parseInt(window.getComputedStyle(card)['left'])) {
 				
 					
-				case -400:
+				case parseInt(window.getComputedStyle(projectCard)['width'])*(-1):
 				
 					document.getElementsByClassName("progress-circle")[1].style.backgroundColor='#A927FF';
 					document.getElementsByClassName("progress-circle")[0].style.backgroundColor='white';
 					break;
 					
-				case -800:
+				case parseInt(window.getComputedStyle(projectCard)['width'])*(-2):
 				
 					document.getElementsByClassName("progress-circle")[2].style.backgroundColor='#A927FF';
 					document.getElementsByClassName("progress-circle")[1].style.backgroundColor='white';
 					break;
 					
-				case -1200:
+				case parseInt(window.getComputedStyle(projectCard)['width'])*(-3):
 					
 				
 					document.getElementsByClassName("progress-circle")[3].style.backgroundColor='#A927FF';
