@@ -4,8 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Seemaab's Portfolio</title>
-		<meta name="description" content="Seemaab's Portfolio. Clean-cut, simple, and engaging. Let me make your next website.
-		Whether you're selling something, want to start blogging, or simple gain an online presence. I'm your man.">
+		<meta name="description" content="Seemaab's Portfolio. Clean-cut, simple, and engaging. Let me make your next website.">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
@@ -120,7 +119,7 @@
 		
 		
 		.projects {
-			
+			background:white;
 			display:flex;
 			flex-direction:column;
 			align-items:center;
@@ -146,9 +145,9 @@
 		.progress-circle {
 			height:20px;
 			width:20px;
-			border:solid 2px #A927FF;
+			border:solid 2px #5151C4;
 			border-radius:50%;
-			background:none;
+			background:white;
 		}
 		
 		
@@ -166,6 +165,13 @@
 		.arrow-box svg {
 			width:50px;
 		}
+		
+		
+		.arrow-box svg:hover {
+		
+			color:red;
+		}
+		
 		.project-box {
 			width:400px;
 			height:400px;
@@ -190,6 +196,7 @@
 			justify-content:flex-start;
 			color:#5151C4;
 			border-radius:20px;
+			
 		}
 		
 		.project-card h3 {
@@ -217,18 +224,21 @@
 			user-select:none;
 		}
 		
-		.project-card button {
+		.project-card a {
 			position:absolute;
 			bottom:50px;
 			background:white;
 			padding:5px 10px;
-			border:solid 3px #00BAFF;
+			border:solid 3px white;
 			font-size:26px;
-			color:#5151C4;
+			color:#A927FF;
 			transition:background .5s,box-shadow .5s;
+			cursor:pointer;
+			text-decoration:none;
 		}
 		
-		.project-card button:hover {
+		.project-card a:hover {
+			border:solid 3px #00BAFF;
 			background:#00BAFF;
 			box-shadow:0 0 20px 0px #00BAFF;
 		}
@@ -509,44 +519,45 @@
 			<div class="arrow-box">
 				<svg viewBox="0 0 103.065 82.79" id="left-arrow">
 					<path d="M1386.221,1872.558l-101.541,40.932,101.541,40.931" 
-						transform="translate(-1283.342 -1872.094)" fill="none" stroke="#00BAFF" stroke-width="5px"/>
+						transform="translate(-1283.342 -1872.094)" fill="none" stroke="#5151C4" stroke-width="5px"/>
 				</svg>
 				
 				<div class="project-box">
 					<div class="card-box" id="card-box">
 						<div class="project-card">
+							<h3> Task List</h3>
+							<span style="color:#A927FF">React</span>
+							<div class="seperator"></div>
+							<p> A simple/quick way to make a to-do-list</p>
+							<a href="https://smujtaba1.github.io/tasklist" target="_blank">Launch</a>
+						</div>
+						<div class="project-card">
 							<h3>Jet-Strike</h3>
 							<span style="color:#A927FF">React/Redux</span>
 							<div class="seperator"></div>
-							<p>My own version of "Galaxy Attack: Alien Shooter", a game I like to play on Android. </p>
-							<button>Launch</button>
+							<p>A game I made using React classes, Redux, and Vanilla JS. Not functioning properly on iOS, yet. </p>
+							<a>Launch</a>
 						</div>
 						<div class="project-card">
-							<h3>Project 2</h3>
-							<span style="color:#A927FF">React/Redux</span>
+							<h3>Quiz Portal</h3>
+							<span style="color:#A927FF">React/React Router</span>
 							<div class="seperator"></div>
-							<p>This is going to be my second project. For my portfolio. </p>
-							<button>Launch</button>
+							<p>A colorful quiz for Science, Math, and History </p>
+							<a href="https://smujtaba1.github.io/quizportal" target="_blank">Launch</a>
 						</div>
 						<div class="project-card">
-							<h3>Project 3</h3>
-							<span style="color:#A927FF">React/Redux</span>
+							<h3>Easy Arabic</h3>
+							<span style="color:#A927FF">React</span>
 							<div class="seperator"></div>
-							<p>This is going to be my second project. For my portfolio. </p>
-							<button>Launch</button>
+							<p>A simple way to learn the Arabic alphabets. With sound </p>
+							<a href="https://smujtaba1.github.io/easyarabic" target="_blank">Launch</a>
 						</div>
-						<div class="project-card">
-							<h3>Project 4</h3>
-							<span style="color:#A927FF">React/Redux</span>
-							<div class="seperator"></div>
-							<p>This is going to be my second project. For my portfolio. </p>
-							<button>Launch</button>
-						</div>
+						
 					</div>
 				</div>
 				<svg viewBox="0 0 103.065 82.79" id="right-arrow">
 					<path d="M1386.221,1872.558l-101.541,40.932,101.541,40.931" 
-					transform="translate(1386.408 1954.884) rotate(180)" fill="none" stroke="#00BAFF" stroke-width="5px"/>
+					transform="translate(1386.408 1954.884) rotate(180)" fill="none" stroke="#5151C4" stroke-width="5px"/>
 				</svg>
 			</div>
 		</section>
@@ -556,7 +567,7 @@
 		<section class="contact" id="contact">
 			<div class="contact-box">
 				<h2>Contact Me</h2>
-				<div>seemanwi@gmail.com</div>
+				<div>seemanwi@yahoo.com</div>
 			</div>
 			
 		</section>
@@ -564,7 +575,7 @@
 	<script>
 		let projectCard = document.getElementsByClassName('project-card')[0];
 		let card=document.getElementById("card-box");
-		document.getElementsByClassName("progress-circle")[0].style.backgroundColor='#A927FF';
+		document.getElementsByClassName("progress-circle")[0].style.backgroundColor='#5151C4';
 		let left=document.getElementById("left-arrow");
 		left.onclick=moveLeft;
 		function moveLeft () {
@@ -576,19 +587,19 @@
 				case 0:
 					
 				
-					document.getElementsByClassName("progress-circle")[0].style.backgroundColor='#A927FF';
+					document.getElementsByClassName("progress-circle")[0].style.backgroundColor='#5151C4';
 					document.getElementsByClassName("progress-circle")[1].style.backgroundColor='white';
 					break;
 					
 				case parseInt(window.getComputedStyle(projectCard)['width'])*(-1):
 				
-					document.getElementsByClassName("progress-circle")[1].style.backgroundColor='#A927FF';
+					document.getElementsByClassName("progress-circle")[1].style.backgroundColor='#5151C4';
 					document.getElementsByClassName("progress-circle")[2].style.backgroundColor='white';
 					break;
 					
 				case parseInt(window.getComputedStyle(projectCard)['width'])*(-2):
 				
-					document.getElementsByClassName("progress-circle")[2].style.backgroundColor='#A927FF';
+					document.getElementsByClassName("progress-circle")[2].style.backgroundColor='#5151C4';
 					document.getElementsByClassName("progress-circle")[3].style.backgroundColor='white';
 					break;
 			}
@@ -607,20 +618,20 @@
 					
 				case parseInt(window.getComputedStyle(projectCard)['width'])*(-1):
 				
-					document.getElementsByClassName("progress-circle")[1].style.backgroundColor='#A927FF';
+					document.getElementsByClassName("progress-circle")[1].style.backgroundColor='#5151C4';
 					document.getElementsByClassName("progress-circle")[0].style.backgroundColor='white';
 					break;
 					
 				case parseInt(window.getComputedStyle(projectCard)['width'])*(-2):
 				
-					document.getElementsByClassName("progress-circle")[2].style.backgroundColor='#A927FF';
+					document.getElementsByClassName("progress-circle")[2].style.backgroundColor='#5151C4';
 					document.getElementsByClassName("progress-circle")[1].style.backgroundColor='white';
 					break;
 					
 				case parseInt(window.getComputedStyle(projectCard)['width'])*(-3):
 					
 				
-					document.getElementsByClassName("progress-circle")[3].style.backgroundColor='#A927FF';
+					document.getElementsByClassName("progress-circle")[3].style.backgroundColor='#5151C4';
 					document.getElementsByClassName("progress-circle")[2].style.backgroundColor='white';
 					break;
 			}
