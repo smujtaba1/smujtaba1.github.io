@@ -6,8 +6,7 @@
 		<title>Seemaab's Portfolio</title>
 		<meta name="description" content="Seemaab's Portfolio. Clean-cut, simple, and engaging. Let me make your next website.">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
+		
 	</head>
 	
 	
@@ -525,11 +524,11 @@
 				<div class="project-box">
 					<div class="card-box" id="card-box">
 						<div class="project-card">
-							<h3> Task List</h3>
+							<h3> Chi-Town Fitness</h3>
 							<span style="color:#A927FF">React</span>
 							<div class="seperator"></div>
-							<p> A simple/quick way to make a to-do-list</p>
-							<a href="https://smujtaba1.github.io/tasklist" target="_blank">Launch</a>
+							<p>One website for all your fitness and diet needs.</p>
+							<a href="https://smujtaba1.github.io/chitownfitness" target="_blank">Launch</a>
 						</div>
 						<div class="project-card">
 							<h3>Jet-Strike</h3>
@@ -579,6 +578,7 @@
 		let left=document.getElementById("left-arrow");
 		left.onclick=moveLeft;
 		function moveLeft () {
+			
 			if (parseInt(window.getComputedStyle(card)['left'])<0) {
 				card.style.left=parseInt(window.getComputedStyle(card)['left'])+parseInt(window.getComputedStyle(projectCard)['width'])+"px";
 			}
