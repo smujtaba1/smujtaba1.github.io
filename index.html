@@ -13,6 +13,7 @@
 	<style>
 		
 		* {
+			--yellow1:#FFF06D;
 			--projects-color:#2626B9;
 			margin:0;
 			padding:0;
@@ -92,22 +93,16 @@
 			border-radius:5px;
 			position:relative;
 		}
-		
 		.landing-name button:hover {
 			background:#FFF06D;
 			color:#5151C4;
 		}
-		
 		.landing-image {
-			
 			margin-left:50px;
 		}
-		
 		#skyline {
 			width:450px;
-		
 		}
-		
 		#road-div {
 			width:1000px;
 		}
@@ -124,6 +119,7 @@
 			flex-direction:column;
 			align-items:center;
 			justify-content:center;
+			padding-bottom:100px;
 		}
 		
 		.projects h1 {
@@ -133,121 +129,39 @@
 			color:#2626B9;
 		}
 		
-		.progress-box {
-			
-			height:20px;
-			width:200px;
-			margin-bottom:30px;
-			display:flex;
-			justify-content:space-around;
-		}
-		
-		.progress-circle {
-			height:20px;
-			width:20px;
-			border:solid 2px var(--projects-color);
-			border-radius:50%;
-			background:white;
-		}
-		
-		
-		.arrow-box {
-		
-			width:600px;
-			height:400px;
-			margin-bottom:180px;
-			display:flex;
-			align-items:center;
-			justify-content:space-around;
-		}
-		
-		
-		.arrow-box svg {
-			width:50px;
-		}
-		
-		
-		.arrow-box svg:hover {
-		
-			color:red;
-		}
-		
 		.project-box {
-			width:400px;
+			padding:0 20px;
 			height:400px;
-			overflow:hidden;
-		}
-				
-		.card-box {
-			width:1600px;
-			display:flex;
-			position:relative;
-		
-			
-		}
-
-		.project-card {
-			border:solid 5px var(--projects-color);
-			height:400px;
-			width:400px;
 			display:flex;
 			flex-direction:column;
-			align-items:center;
-			justify-content:flex-start;
-			color:#5151C4;
-			border-radius:20px;
+			justify-content:space-around;
+			align-items:flex-start;
+		}
+		.project-box div {
 			
-			
 		}
-		
-		.project-card h3 {
-			font-size:28px;
-			margin-top:30px;
-			user-select:none;
-			color:var(--projects-color);
-		}
-		
-		.project-card span {
-			user-select:none;
-			color:var(--projects-color);
-		}
-	
-		.seperator {
-			height:5px;
-			background:#2626B9;
-			width:100%;
-			margin-top:30px;
-		}
-	
-		.project-card p {
-			margin:0px 30px;
-			margin-top:30px;
-			font-size:22px;
-			font-weight:100;
-			user-select:none;
-			color:var(--projects-color);
-		}
-		
-		.project-card a {
-			position:absolute;
-			bottom:50px;
-			background:white;
-			padding:5px 10px;
-			border:solid 3px #A927FF;
-			font-size:26px;
-			color:#A927FF;
-			transition:background .5s,box-shadow .5s;
-			cursor:pointer;
+		.project-box a {
+			font-size:24px;
+			font-weight:bold;
 			text-decoration:none;
+			color:#2626B9;
 		}
 		
-		.project-card a:hover {
-			border:solid 3px #00BAFF;
-			background:#00BAFF;
-			box-shadow:0 0 20px 0px #00BAFF;
+		.project-box a:hover {
+			color:black;
 		}
 		
-		
+		.project-box a:visited:hover {
+			color:black;
+		}
+		.project-box a:visited {
+			color:#2626B9;
+		}
+		.project-box p {
+			color:#707070;
+			margin-top:10px;
+			font-size:18px;
+		}
 		.contact {
 			background:#5151C4;
 			width:100%;
@@ -257,11 +171,8 @@
 			flex-direction:column;
 			justify-content:center;
 		}
-		
-		.contact-box {
-			
+		.contact-box {		
 			width:340px;
-	
 			display:flex;
 			flex-direction:column;
 			justify-content:space-between;
@@ -269,40 +180,27 @@
 			color:#FFF06D;
 			height:200px;
 		}
-		
-		
-
 		.contact-box h2 {
-			font-size:60px;
-			
+			font-size:60px;	
 		}
-		
 		.contact-box div {
 			font-size:25px;
 		}
-		
-		
-		
-		
 		
 		@media only screen and (max-width:1100px) {
 			.landing-image {
 				display:none;
 			}
-			
 			.landing-name {
 				margin:0;
 			}
-			
 			.main-box {
 				margin:100px;
 			}
-			
 			#road-div {
 				width:450px;
 				text-align:center;
 			}
-			
 			#road {
 				margin:0;
 			}
@@ -311,93 +209,27 @@
 		@media only screen and (max-width:700px) {
 			.landing-name {
 				width:320px;
-				
 			}
-			
 			.landing-name h1 {
 				font-size:50px;
 			}
-			
 			.landing-name button {
 				font-size:20px;
 				margin:0 10px;
 			}
-		
 			#road-div {
 				width:320px;
 			}
-			
-			
-			
 			.projects h1 {
 				font-size:50px;
 			}
-			
-			.progress-box {
-			
-			height:15px;
-			width:150px;
-			margin-bottom:30px;
-			
-		}
-		
-		.progress-circle {
-			height:15px;
-			width:15px;
-			
-		}
-			
-			.arrow-box {
-				width:320px;
-				height:300px;
-			}
-			
-			.arrow-box svg {
-				width:30px;
-			}
-			
 			.project-box {
 				height:300px;
-				width:240px;
-			}
-			
-			.card-box {
-				width:960px;
-			}
-			
-			.project-card {
-				height:300px;
-				width:240px;
 				
 			}
-			
-			.project-card h3 {
-				font-size:23px;
-				margin-top:15px;
-			}
-			
-			.project-card span {
-				font-size:15px;
-			}
-			
-			.seperator {
-				margin-top:15px;
-			}
-			
-			.project-card p {
-				font-size:20px;
-				margin:15px 15px 0 15px;
-			}
-			
-			.project-card button {
-				font-size:24px;
-				bottom:20px;
-			}
-			
 			.contact-box h2{
 				font-size:50px;
 			}
-			
 			.contact-box div {
 				font-size:23px;
 			}
@@ -514,57 +346,39 @@
 		<section class="projects" id="projects">
 			<h1>Projects</h1>
 			
-			<div class="progress-box">
-				<div class="progress-circle"></div>
-				<div class="progress-circle"></div>
-				<div class="progress-circle"></div>
-				<div class="progress-circle"></div>
-			</div>
 			
-			<div class="arrow-box">
-				<svg viewBox="0 0 103.065 82.79" id="left-arrow">
-					<path d="M1386.221,1872.558l-101.541,40.932,101.541,40.931" 
-						transform="translate(-1283.342 -1872.094)" fill="none" stroke="#5151C4" stroke-width="5px"/>
-				</svg>
+			
+			
+				
 				
 				<div class="project-box">
-					<div class="card-box" id="card-box">
-						<div class="project-card">
-							<h3> Chi-Town Fitness</h3>
-							<span>React</span>
-							<div class="seperator"></div>
-							<p>One website for your fitness needs.</p>
-							<a href="https://smujtaba1.github.io/chitownfitness" target="_blank">Launch</a>
-						</div>
-						<div class="project-card">
-							<h3>Jet-Strike</h3>
-							<span>React/Redux</span>
-							<div class="seperator"></div>
-							<p>A game I made using React classes, Redux, and Vanilla JS. Not functioning properly on iOS, yet. </p>
-							<a href="https://smujtaba1.github.io/jet-strike" target="_blank">Launch</a>
-						</div>
-						<div class="project-card">
-							<h3>Quiz Portal</h3>
-							<span>React/React Router</span>
-							<div class="seperator"></div>
-							<p>A colorful quiz for Science, Math, and History. </p>
-							<a href="https://smujtaba1.github.io/quizportal" target="_blank">Launch</a>
-						</div>
-						<div class="project-card">
-							<h3>Easy Arabic</h3>
-							<span>React</span>
-							<div class="seperator"></div>
-							<p>A simple way to learn the Arabic alphabets. With sound. </p>
-							<a href="https://smujtaba1.github.io/easyarabic" target="_blank">Launch</a>
-						</div>
-						
-					</div>
+					
+							<div>
+								<a href="https://smujtaba1.github.io/chitownfitness" target="_blank">ChiFit</a>
+								<p>A convenient place to get started in Diet and Fitness</p>
+							</div>
+							<div>
+								<a href="https://smujtaba1.github.io/jet-strike" target="_blank">Jet Strike</a>
+								<p>A game I made using React w/classes and Redux</p>
+							</div>
+							<div>
+								<a href="https://smujtaba1.github.io/quizportal" target="_blank">Quiz Portal</a>
+								<p>A colorful quiz for Science, Math, and History</p>
+							</div>
+							<div>
+								<a href="https://smujtaba1.github.io/easyarabic" target="_blank">Easy Arabic</a>
+								<p>A simple way to learn the Arabic alphabets w/audio</p>
+							</div>
+							
+	
+							
+	
+							
+
+					
 				</div>
-				<svg viewBox="0 0 103.065 82.79" id="right-arrow">
-					<path d="M1386.221,1872.558l-101.541,40.932,101.541,40.931" 
-					transform="translate(1386.408 1954.884) rotate(180)" fill="none" stroke="#5151C4" stroke-width="5px"/>
-				</svg>
-			</div>
+				
+			
 		</section>
 		
 		
@@ -578,71 +392,7 @@
 		</section>
 	</body>
 	<script>
-		let projectCard = document.getElementsByClassName('project-card')[0];
-		let card=document.getElementById("card-box");
-		document.getElementsByClassName("progress-circle")[0].style.backgroundColor='#A927FF';
-		let left=document.getElementById("left-arrow");
-		left.onclick=moveLeft;
-		function moveLeft () {
-			
-			if (parseInt(window.getComputedStyle(card)['left'])<0) {
-				card.style.left=parseInt(window.getComputedStyle(card)['left'])+parseInt(window.getComputedStyle(projectCard)['width'])+"px";
-			}
-			
-			switch (parseInt(window.getComputedStyle(card)['left'])) {
-				case 0:
-					
-				
-					document.getElementsByClassName("progress-circle")[0].style.backgroundColor='#A927FF';
-					document.getElementsByClassName("progress-circle")[1].style.backgroundColor='white';
-					break;
-					
-				case parseInt(window.getComputedStyle(projectCard)['width'])*(-1):
-				
-					document.getElementsByClassName("progress-circle")[1].style.backgroundColor='#A927FF';
-					document.getElementsByClassName("progress-circle")[2].style.backgroundColor='white';
-					break;
-					
-				case parseInt(window.getComputedStyle(projectCard)['width'])*(-2):
-				
-					document.getElementsByClassName("progress-circle")[2].style.backgroundColor='#A927FF';
-					document.getElementsByClassName("progress-circle")[3].style.backgroundColor='white';
-					break;
-			}
-		}
 		
-		
-		let right=document.getElementById("right-arrow");
-		right.onclick=moveRight;
-		function moveRight () {
-			if (parseInt(window.getComputedStyle(card)['left'])>parseInt(window.getComputedStyle(projectCard)['width'])*-3) {
-				card.style.left=parseInt(window.getComputedStyle(card)['left'])-parseInt(window.getComputedStyle(projectCard)['width'])+"px";
-			}
-			
-			switch (parseInt(window.getComputedStyle(card)['left'])) {
-				
-					
-				case parseInt(window.getComputedStyle(projectCard)['width'])*(-1):
-				
-					document.getElementsByClassName("progress-circle")[1].style.backgroundColor='#A927FF';
-					document.getElementsByClassName("progress-circle")[0].style.backgroundColor='white';
-					break;
-					
-				case parseInt(window.getComputedStyle(projectCard)['width'])*(-2):
-				
-					document.getElementsByClassName("progress-circle")[2].style.backgroundColor='#A927FF';
-					document.getElementsByClassName("progress-circle")[1].style.backgroundColor='white';
-					break;
-					
-				case parseInt(window.getComputedStyle(projectCard)['width'])*(-3):
-					
-				
-					document.getElementsByClassName("progress-circle")[3].style.backgroundColor='#A927FF';
-					document.getElementsByClassName("progress-circle")[2].style.backgroundColor='white';
-					break;
-			}
-			
-		}
 		
 		
 		
