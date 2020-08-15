@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<style>
+			body {
+				width:100vw;
+				height:100vh;
+				margin:0;
+			
+			}
+			
+			#square-box {
+				width:200px;
+				height:200px;
+				display:flex;
+				justify-content:center;
+				align-items:center;
+				color:white;
+				border-radius:50%;
+			}
+			
+			#square-box:hover {
+				background:red;
+			}
+			
+			#d-square {
+				position:absolute;
+				animation:seemaab 5s linear infinite reverse;
+				transform-style:preserve-3d;
+				height:100px;
+				width:100px;
+				transform-origin:50% 50% 50px;
+			}
+			
+			#d-square > div{
+				height:100px;
+				width:100px;
+				background:#341C98;
+				position:absolute;
+				display:flex;
+				justify-content:center;
+				align-items:center;
+				font-size:24px;
+				transform-origin:0 0;
+				box-sizing:border-box;
+				border:solid 1px white;
+				color:white;
+				opacity:.4;
+			}
+			
+			
+			
+			@keyframes seemaab {
+				0% {transform:rotateX(0deg) rotateY(0deg)}
+				
+				
+				50% {transform:rotateX(360deg) rotateY(180deg);}
+				
+				
+				
+				100% {transform:rotateX(720deg) rotateY(360deg);}
+			}
+			
+			
+			#d-square > div:nth-child(1) {
+				transform:translateZ(100px);
+			}
+			
+			#d-square > div:nth-child(2) {	
+				transform:translate3d(100px,0,100px) rotateY(90deg);
+			}
+			
+			#d-square > div:nth-child(3) {			
+				transform:translate3d(100px,0,0) rotateY(180deg);
+			}
+			
+			#d-square > div:nth-child(4) {
+				transform:rotateY(270deg);
+			}
+			
+			#d-square > div:nth-child(5) {
+				transform:rotateX(90deg);
+			}
+			
+			#d-square > div:nth-child(6) {
+				transform:translate3d(100px,100px,0) rotateY(180deg) rotateX(270deg); 
+			}
+			
+			.name-heading {
+				font-size:40px;
+			}
+		</style>
+	</head>
+	<body>
+	
+	<div>
+		<h1 class="name-heading">Seemaab Mujtaba</h1>
+		
+		<div id="square-box">
+			Seemaab
+			<div id="d-square">
+				<div>HTML</div>
+				<div>CSS</div>
+				<div>Javascript</div>
+				<div>React</div>
+				<div>Redux</div>
+				<div>Bootstrap</div>
+			</div>
+		</div>
+		
+	</div>
+
+
+	</body>
+</html>
