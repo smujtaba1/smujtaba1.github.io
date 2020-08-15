@@ -16,25 +16,26 @@
 			
 			#square-box {
 				width:200px;
-				height:200px;
+				height:230px;
 				display:flex;
-				justify-content:center;
+				flex-direction:column;
+				justify-content:space-around;
 				align-items:center;
 				color:white;
 				border-radius:50%;
+				position:relative;
 			}
 			
-			#square-box:hover {
-				background:red;
-			}
+			
 			
 			#d-square {
 				position:absolute;
-				animation:seemaab 5s linear infinite reverse;
+				animation:seemaab 10s linear infinite reverse;
 				transform-style:preserve-3d;
 				height:100px;
 				width:100px;
 				transform-origin:50% 50% 50px;
+				margin-bottom:20px;
 			}
 			
 			#d-square > div{
@@ -45,12 +46,12 @@
 				display:flex;
 				justify-content:center;
 				align-items:center;
-				font-size:24px;
+				font-size:20px;
 				transform-origin:0 0;
 				box-sizing:border-box;
 				border:solid 1px white;
 				color:white;
-				opacity:.4;
+				
 			}
 			
 			
@@ -69,41 +70,60 @@
 			
 			#d-square > div:nth-child(1) {
 				transform:translateZ(100px);
+				background:#E44D26;
 			}
 			
 			#d-square > div:nth-child(2) {	
 				transform:translate3d(100px,0,100px) rotateY(90deg);
+				background:#264de4;
 			}
 			
 			#d-square > div:nth-child(3) {			
 				transform:translate3d(100px,0,0) rotateY(180deg);
+				background:#F0DB4F;
+				color:black;
 			}
 			
 			#d-square > div:nth-child(4) {
 				transform:rotateY(270deg);
+				background:#61DBFB;
+				color:black;
 			}
 			
 			#d-square > div:nth-child(5) {
 				transform:rotateX(90deg);
+				background:#764abc;
 			}
 			
 			#d-square > div:nth-child(6) {
 				transform:translate3d(100px,100px,0) rotateY(180deg) rotateX(270deg); 
+				background:#602C50;
 			}
 			
+			#square-base {
+				height:30px;
+				width:150px;
+				background:#341C98;
+				position:absolute;
+				bottom:0;
+				border-radius:50%;
+				opacity:.4;
+			}
 			
 		</style>
 	</head>
 	<body>
 		<div id="square-box">
-			<div id="d-square">
-				<div>HTML</div>
-				<div>CSS</div>
-				<div>Javascript</div>
-				<div>React</div>
-				<div>Redux</div>
-				<div>Bootstrap</div>
-			</div>
+				
+				<div id="d-square">
+					<div>HTML</div>
+					<div>CSS</div>
+					<div>Javascript</div>
+					<div>React</div>
+					<div>Redux</div>
+					<div>Bootstrap</div>
+				</div>
+				<div id="square-base"></div>
 		</div>
 	</body>
 </html>
