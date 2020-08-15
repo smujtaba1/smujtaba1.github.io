@@ -196,7 +196,8 @@
 				width:200px;
 				height:230px;
 				display:flex;
-				justify-content:center;
+				flex-direction:column;
+				justify-content:space-around;
 				align-items:center;
 				color:white;
 				border-radius:50%;
@@ -205,17 +206,18 @@
 			
 			#d-square {
 				position:absolute;
-				animation:seemaab 5s linear infinite reverse;
+				animation:seemaab 15s linear infinite reverse;
 				transform-style:preserve-3d;
 				height:100px;
 				width:100px;
 				transform-origin:50% 50% 50px;
+				margin-bottom:20px;
 			}
 			
 			#d-square > div{
 				height:100px;
 				width:100px;
-				background:#341C98;
+				background:#7C4CB4;
 				position:absolute;
 				display:flex;
 				justify-content:center;
@@ -268,7 +270,7 @@
 		
 			#square-base {
 				height:30px;
-				width:120px;
+				width:150px;
 				background:#341C98;
 				position:absolute;
 				bottom:0;
