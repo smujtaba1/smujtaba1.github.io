@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html >
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<style>
+			body {
+				margin:0;
+				font-family:Segoe UI;
+				background:white;
+			}
+
+			.wrapper {
+				display:flex;
+				justify-content: space-around;
+				align-items: center;
+				max-width:550px;
+				margin:auto;
+				flex-wrap:wrap;
+			}
+
+			h1 {
+				margin:20px 0 20px 0;
+				text-align:center;
+				color:#0247A1;
+			}
+
+			.input-container {
+				background:white;
+				padding:10px;
+				box-sizing:border-box;
+				border:solid 1px black;
+			}
+
+			.input {
+				display:block;
+				margin:5px 0;
+				font-weight:bold;
+				font-size:20px;
+				padding:0 10px;
+
+			}
+
+			#input-workout-name {
+				font-size:18px;
+				font-family:Segoe UI;
+			}
+
+			#input-workout-name:focus{
+				background:#86D1BF;
+			}
+
+			.seconds-label {
+				color:#0247A1;
+			}
+
+			#total-seconds {
+				width:70px;
+				font-size:18px;
+			}
+
+			#total-seconds:focus{
+				background:#86D1BF;
+			}
+
+			.add-btn {
+				width:100%;
+				background:#0247A1;
+				border:none;
+				box-shadow:2px 2px 6px grey;
+				position:relative;
+				color:white;
+				font-weight:100;
+				padding:15px 0;
+				font-size:16px;
+			}
+
+			#begin-btn {
+				height:50px;
+				font-weight:bold;
+				margin:10px;
+				background:#0247A1;
+				color:#FFEE54;
+				box-shadow:2px 2px 6px grey;
+				border:none;
+			}
+
+			#counter {
+				text-align:center;
+				width:100%;
+				display:block;
+				font-size: 80px;
+
+			}
+
+			.instructions {
+				box-sizing:border-box;
+				margin-bottom:30px;
+				padding:10px;
+				width:100%;
+				font-size:18px;
+				color:purple;
+				text-align:center;
+
+			}
+
+			#workout-list {
+					color:#0247A1;
+					width:320px;
+					margin:40px 0 0 20px;
+					font-weight:bold;
+			}
+
+			#time-box {
+				background:#0247A1;
+				color:white;
+				display:none;
+			}
+
+			.workout {
+				text-align:center;
+				padding:10px;
+				font-size:55px;
+			}
+			#current-workout {
+
+
+			}
+
+			#next-workout {
+				color:#FFEE54;
+				border-top:solid 1px white;
+			}
+
+
+
+
+
+
+		</style>
+
+	</head>
+
+	<body>
+		<h1>Custom Cardio Workout Maker</h1>
+		<div class="instructions">
+			Add workouts with the time in seconds you will perform each.
+		</div>
+		<div class="wrapper">
+			<div class="input-container">
+				<textarea type="text" id="input-workout-name" rows="2" placeholder="Enter workout"></textarea>
+				<div>
+					<label class="seconds-label">Seconds: </label><input id="total-seconds" type="number"  value="0" step="15" min="0">
+					<input type="button" class ="input add-btn" id="add-btn" value="Add" onclick="g()">
+				</div>
+			</div>
+			<input type="button"  class="input" id="begin-btn" value="Begin Workout" onclick="g('start')">
+		</div>
+
+
+
+
+		<div id="workout-list"></div>
+		<div id="time-box">
+			<div class="workout" id="current-workout"></div>
+			<div id="counter"></div>
+			<div class="workout" id="next-workout"></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+
+		function addToList () {
+			let workoutList = [];
+			let timeList = [];
+			function makeList (start) {
+				if (start=="start") {
+					startWorkout(workoutList,timeList,0);
+				}
+				else {
+
+					let workoutString=""
+					if (document.getElementById("input-workout-name").value &&
+							document.getElementById("total-seconds").value > 0) {
+						document.getElementById("input-workout-name").className="none";
+						document.getElementById("total-seconds").className="none";
+						workoutList.push(document.getElementById("input-workout-name").value);
+						timeList.push(document.getElementById("total-seconds").value);
+						for (let i=0;i<workoutList.length;i++) {
+							workoutString += ("<div>"+(i+1)+") "+workoutList[i]+"-"+timeList[i]+"s</div>")
+						}
+
+						document.getElementById("input-workout-name").value="";
+						document.getElementById("total-seconds").value="0";
+						document.getElementById("workout-list").innerHTML = workoutString;
+					}else{
+
+						document.getElementById("input-workout-name").value?
+						true:function(){
+							document.getElementById("input-workout-name").style.backgroundColor="#FF6B75";
+							window.setTimeout(()=>document.getElementById("input-workout-name").style.backgroundColor="white",300)
+						}();
+
+						document.getElementById("total-seconds").value>0?
+						true:function(){
+							document.getElementById("total-seconds").style.backgroundColor="#FF6B75";
+							window.setTimeout(()=>document.getElementById("total-seconds").style.backgroundColor="white",300)
+						}();
+
+					}
+				}
+			}
+			return makeList;
+		}
+
+
+		let g = addToList();
+
+		function timeFormat(timeLeft) {
+			let secondsSlot="";
+			if (timeLeft%60<10){
+				secondsSlot="0"+timeLeft;
+			}else{
+				secondsSlot=`${timeLeft%60}`;
+			}
+			return (`${Math.floor(timeLeft/60)+":"+secondsSlot}`)
+		}
+
+		function countSeconds (timeList,workoutList,currInd) {
+
+			let x;
+			let lastTime = new Date().getTime();
+			let counter = document.getElementById("counter");
+			document.getElementById("current-workout").innerHTML=workoutList[currInd];
+			if(currInd<workoutList.length-1){
+				document.getElementById("next-workout").innerHTML="Next: " + workoutList[currInd+1];
+			}else {
+				document.getElementById("next-workout").innerHTML="LAST ONE!!!!";
+			}
+
+
+			counter.innerHTML = timeFormat(timeList[currInd]);
+
+			function countDown () {
+				let myWorkoutList=workoutList;
+				let myCurrInd=currInd;
+				let myTimeList=timeList;
+				let currentTime = new Date().getTime();
+				if ((currentTime-lastTime)>=1000 && myTimeList[myCurrInd]>0) {
+					myTimeList[myCurrInd]-=1;
+
+					//counter.innerHTML=`${Math.floor(myTimeList[myCurrInd]/60)+":"+myTimeList[myCurrInd]%60}`;
+					counter.innerHTML=`${timeFormat(myTimeList[myCurrInd])}`
+					lastTime = currentTime;
+				}
+				myTimeList[myCurrInd]==0?cancelAnimationFrame(x):x=requestAnimationFrame(countDown);
+		 		myTimeList[myCurrInd]==0?startWorkout(myWorkoutList,myTimeList,myCurrInd+1):true;
+			}
+			return countDown();
+		}
+
+
+
+
+		function startWorkout (workoutList,timeList,currInd) {
+			if (workoutList.length){
+
+				document.body.style.background="#0247A1";
+				document.querySelector("h1").style.display="none";
+				document.querySelector(".instructions").style.display="none";
+				document.querySelector(".input-container").style.display="none";
+				document.getElementById("begin-btn").style.display="none";
+				document.getElementById("workout-list").style.display="none";
+				document.getElementById("time-box").style.display="block";
+			}
+
+			if(currInd==workoutList.length){
+
+			}else {
+				countSeconds(timeList,workoutList,currInd);
+			}
+
+		}
+
+
+	</script>
+
+</html>
