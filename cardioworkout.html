@@ -219,7 +219,9 @@
 
 		function timeFormat(timeLeft) {
 			let secondsSlot="";
-			if (timeLeft%60<10){
+			if(timeLeft%60==0){
+			secondsSlot="00"
+			}else if (timeLeft%60<10){
 				secondsSlot="0"+timeLeft;
 			}else{
 				secondsSlot=`${timeLeft%60}`;
