@@ -1,18 +1,537 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, inital-scale=1.0">
-    <title></title>
-    <style media="screen">
-      img {
-        margin-bottom:30px;
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+		<link href="https://fonts.googleapis.com/css2?family=BenchNine:wght@300&display=swap" rel="stylesheet">
+		<style media="screen">
+			body {
+				margin:0;
+			}
+
+      .landing-page {
+        background:linear-gradient(to bottom, #0084C4,white 80%);
+        position:relative;
+        min-height:100vh;
+        overflow:hidden;
       }
-    </style>
-  </head>
-  <body style="margin:0">
-    <img src="./indexpics/test1.png" width="100%"/>
-    <img src="./indexpics/test2.png" width="100%"/>
-    <img src="./indexpics/test3.png" width="100%"/>
-  </body>
+
+      .landing-top {
+        position:relative;
+        min-height:50vh;
+        width:100vw;
+        display:flex;
+        flex-wrap:wrap;
+        overflow:hidden;
+      }
+
+      .landing-btm {
+        min-height:50vh;
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items:center;
+      }
+
+      .name-box {
+        width:50%;
+        position:relative;
+        box-sizing: border-box;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+
+      #bubbles {
+        max-height:100%;
+        top:50%;
+        transform:translateY(-50%);
+        width:50%;
+        position:absolute;
+        z-index:1;
+      }
+      #city {
+        max-height:100%;
+        z-index:1;
+        width:35vw;
+        position:absolute;
+        right:5%;
+        top:50%;
+        transform: translateY(-50%);
+      }
+      #react-logo {
+        height:100%;
+        position:absolute;
+        top:10%;
+        right:60%;
+        z-index:0;
+      }
+
+      #redux-logo {
+        height:100%;
+        position:absolute;
+        top:10%;
+        left:60%;
+        z-index:0;
+      }
+
+      #workstation {
+        max-height:100%;
+        width:40vw;
+        position:absolute;
+        left:40%;
+        bottom:0;
+        transform: translateX(-50%);
+        z-index:1;
+      }
+
+      .name-box > h2 {
+        font-family:Segoe UI;
+        margin:0;
+        margin-bottom:-3px;
+        font-size:40px;
+        font-weight:bold;
+        letter-spacing:-2.5px;
+        color:#27556C;
+      }
+
+      .sub-state {
+        margin-left:10px;
+        color:#FE1B68;
+        font-size:22px;
+        letter-spacing:7px;
+      	font-family: 'BenchNine', sans-serif;
+        font-weight:bold;
+      }
+
+      .btn-box > button {
+        background:#FE1B68;
+        border-radius:6px;
+        border:none;
+        color:white;
+        width:100px;
+        font-size:18px;
+        margin:25px 10px 80px;
+        padding:10px 0;
+      }
+
+      .about-page {
+        display:flex;
+        padding:0 80px;
+        background:white;
+        position:relative;
+        padding:80px;
+      }
+
+      .article-box {
+        width:50%;
+        position:relative;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+      }
+
+      .article-box .envelope {
+        background:#FE6185;
+        width:85%;
+        transform:rotate(4deg);
+        transform-origin:center;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+      }
+
+      .article {
+        transform-origin:center;
+        background:#27556C;
+        transform:rotate(-4deg);
+        padding:10px 20px 20px;
+      }
+
+      .article > h2 {
+        margin:0 0 20px;
+        font-size:48px;
+        font-family:Segoe UI;
+        font-weight:normal;
+        color:#FE6185;
+        position:relative;
+        width:195px;
+        padding-bottom:8px;
+      }
+
+      .article > h2::after {
+        content:'my story';
+        color:#42AADC;
+        position:absolute;
+        font-size:16px;
+        bottom:0;
+        right:0;
+        letter-spacing:3.3px;
+      }
+
+      .article > p {
+        color:white;
+        font-family:Garamond;
+        font-weight:lighter;
+        font-size:16px;
+        padding-left:20px;
+        letter-spacing: .3px;
+      }
+
+      #article p:nth-child(2) {
+        text-indent:10px;
+      }
+
+      #article p:nth-child(3) {
+        text-indent:10px;
+      }
+
+      .chart-box {
+        width:50%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .chart-box .envelope {
+        background:#FE6185;
+        transform:rotate(-3deg);
+        transform-origin:center;
+        width:95%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+      }
+      .chart {
+        width:100%;
+        transform:rotate(3deg);
+        transform-origin:center;
+        background:linear-gradient(to bottom left,#3A6C85,#173F53);
+        padding:10px 20px 20px;
+        font-family:Segoe UI;
+      }
+      .chart > h2 {
+        margin:0 0 20px;
+        font-size:48px;
+        font-family:Segoe UI;
+        font-weight:normal;
+        color:#FE6185;
+        position:relative;
+        width:198px;
+        padding-bottom:8px;
+      }
+
+      .chart > h2::after {
+        content:'my time';
+        color:#42AADC;
+        position:absolute;
+        font-size:16px;
+        bottom:0;
+        right:0;
+        letter-spacing:3.3px;
+      }
+
+      #myChart {
+        width:100%;
+        height:100%;
+      }
+
+			.projects-page {
+				padding:0 80px 80px;
+			}
+
+      .projects-main-box {
+      }
+
+      .projects-main-box > h2 {
+        margin:0 0 20px;
+        font-size:48px;
+        font-family:Segoe UI;
+        font-weight:normal;
+        color:#FE6185;
+        position:relative;
+        width:169px;
+        padding-bottom:8px;
+      }
+
+      .projects-main-box > h2::after {
+        content:'my work';
+        color:#42AADC;
+        position:absolute;
+        font-size:16px;
+        bottom:0;
+        right:0;
+        letter-spacing:3.3px;
+      }
+
+      .projects-navbar {
+        display:flex;
+        justify-content: center;
+        align-items: flex-start;
+        font-family:Segoe UI;
+				margin-bottom:40px;
+      }
+
+      .projects-list {
+        width:450px;
+        display:flex;
+        justify-content: space-around;
+        margin:0;
+      }
+
+      .projects-list > li {
+        list-style-type: none;
+        color:#0084C4;
+				font-size:18px;
+				cursor:pointer;
+      }
+
+			.projects-list > li:hover {
+				color:#FE1B68;
+			}
+
+			.projects-list > li:nth-child(1) {
+				color:#FE1B68;
+			}
+
+
+			.projects-container {
+				display:flex;
+				flex-wrap:wrap;
+				justify-content: center;
+			}
+
+			.project-card {
+				width:245px;
+				height:340px;
+				overflow:hidden;
+				position:relative;
+				margin:20px 20px;
+			}
+
+			.project-card-overlay {
+				position:absolute;
+				z-index:1;
+				height:100%;
+				width:100%;
+				background:#173F53;
+				opacity:.8;
+			}
+
+			.project-card > h3 {
+				background:#FE1B68;
+				color:white;
+				position:absolute;
+				top:0;
+				z-index:2;
+				width:100%;
+				padding:20px 0;
+				margin:0;
+				text-align:center;
+				font-size:22px;
+				font-family: 'BenchNine', sans-serif;
+				font-weight:100;
+				letter-spacing:5px;
+				border:solid 1px grey;
+				box-sizing:border-box;
+			}
+
+			.project-card img {
+				height:100%;
+				position:absolute;
+				left:50%;
+				top:50%;
+				transform:translate(-50%,-50%);
+				z-index:0;
+			}
+
+			.project-card-btn-box {
+				position:absolute;
+				z-index:2;
+				bottom:0;
+				left:0;
+				width:100%;
+				display:flex;
+				justify-content: center;
+				margin-bottom:60px;
+			}
+
+
+			.project-btn {
+				background:#FE1B68;
+				margin:5px;
+				width:80px;
+				text-align:center;
+			}
+
+			.project-btn > a {
+				text-decoration: none;
+				color:white;
+				font-family: Segoe UI;
+				font-size:14px;
+				background:#FE1B68;
+				display:flex;
+				width:85px;
+				height:40px;
+				justify-content: center;
+				align-items:center;
+			}
+
+			.footer {
+				background:#173F53;
+				padding:80px 0 20px;
+				display:flex;
+				flex-direction:column;
+				align-items:center;
+			}
+
+			.footer-main-box {
+				display:flex;
+
+				justify-content: center;
+			}
+
+			.footer-box {
+				display:flex;
+				flex-direction:column;
+				align-items:center;
+				margin:5px;
+
+			}
+
+			.footer-box > img {
+				height:60px;
+				margin-bottom:10px;
+			}
+
+			.footer-box a {
+				color:#FE6185;
+				text-decoration: none;
+			}
+
+			.final-statements {
+				display:flex;
+				flex-direction:column;
+				align-items:center;
+				margin-top:30px;
+				color:white;
+				font-family:Segoe UI;
+			}
+		</style>
+
+	</head>
+	<body>
+
+      <section class="landing-page">
+        <img id="react-logo" src="./indexpics/react.svg" alt="">
+        <img id="redux-logo" src="./indexpics/redux.svg" alt="">
+        <div class="landing-top">
+          <img id="bubbles" src="./indexpics/bubbles.svg" />
+          <img id="workstation" src="./indexpics/workstation.svg" />
+          <img id="city" src="./indexpics/city.svg" />
+        </div>
+        <div class="landing-btm">
+          <div class="name-box">
+            <h2>Seemaab Mujtaba</h2>
+            <div class="sub-state">I Make Websites</div>
+            <div class="btn-box">
+              <button type="button" name="button">About</button>
+              <button type="button" name="button">Projects</button>
+            </div>
+          </div>
+        </div>
+			</section>
+      <section class="about-page">
+        <div class="article-box">
+          <div class="envelope">
+            <div class="article" id="article">
+              <h2>who I am</h2>
+              <p>I  began programming in 2017.
+                 As a new grad from UIC, I started learning Python
+                 to "backtest" stock market strategies I had come
+                 up with. I never programmed anything before, so I
+                 did what I knew best, read a book about it. I
+                 read one, and for the next few weeks I found myself
+                 doing coding challenges and creating problems to
+                 solve for hours on-end.
+               </p>
+              <p>After a few months, someone advised me to try web
+                development. I explored HTML and CSS, and followed it
+                up with Javascript. I continued to learn React,
+                first with classes, and then function components
+                with hooks.
+              </p>
+              <p>
+                Currently, I'm focusing on my skills in UI design and experience.
+              </p>
+              <p>Thank you for visiting my portfolio!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="chart-box">
+          <div class="envelope">
+            <div class="chart">
+              <h2>what I do</h2>
+              <canvas id="myChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="projects-page">
+        <div class="projects-main-box">
+          <h2>projects</h2>
+          <div class="projects-interface">
+            <div class="projects-navbar">
+              <ul class="projects-list">
+                <li onclick="generate_all(this)">All</li>
+                <li onclick="generate_html_css(this)">HTML & CSS</li>
+                <li onclick="generate_vanilla_js(this)">Vanilla Javascript</li>
+                <li onclick="generate_react(this)">React</li>
+              </ul>
+            </div>
+            <div class="projects-container">
+							<div class="project-card">
+
+							</div>
+            </div>
+          </div>
+        </div>
+      </section>
+			<footer class="footer">
+				<div class="footer-main-box">
+					<div class="footer-box">
+						<img src="./indexpics/githublogo.svg" alt="">
+						<a href="#">github.com/smujtaba1</a>
+					</div>
+					<div class="footer-box">
+						<img src="./indexpics/emaillogo.svg" alt="">
+						<a href="#">seemanwi@yahoo.com</a>
+					</div>
+					<div class="footer-box">
+						<img src="./indexpics/phonelogo.svg" alt="">
+						<a href="#" onclick="getNumber()">Get My Number!</a>
+					</div>
+				</div>
+				<div class="final-statements">
+					<span>Currently seeking opportunities...</span>
+					<span>Please contact ONLY if you are an employer or recruiter !</span>
+				</div>
+			</footer>
+			<script type="text/javascript" src="./portfoliodata.js"></script>
+      <script type="text/javascript">
+
+
+
+
+
+
+
+
+      </script>
+
+	</body>
 </html>
