@@ -11,7 +11,7 @@
 			}
 
       .landing-page {
-        background:linear-gradient(to bottom, #0084C4,white 80%);
+        background:linear-gradient(to bottom,#173F53,white 90%);
         position:relative;
         min-height:100vh;
         overflow:hidden;
@@ -35,7 +35,7 @@
       }
 
       .name-box {
-        width:50%;
+        width:303px;
         position:relative;
         box-sizing: border-box;
         display:flex;
@@ -390,7 +390,6 @@
 
 			.footer-main-box {
 				display:flex;
-
 				justify-content: center;
 			}
 
@@ -399,17 +398,17 @@
 				flex-direction:column;
 				align-items:center;
 				margin:5px;
-
 			}
 
 			.footer-box > img {
-				height:60px;
+				height:50px;
 				margin-bottom:10px;
 			}
 
 			.footer-box a {
 				color:#FE6185;
 				text-decoration: none;
+				cursor:pointer;
 			}
 
 			.final-statements {
@@ -420,6 +419,113 @@
 				color:white;
 				font-family:Segoe UI;
 			}
+
+			@media only screen and (max-width:1100px) {
+				.about-page {
+					flex-wrap:wrap;
+	        padding:80px 20px 80px;
+	      }
+
+				.chart-box {
+					min-width:350px;
+				}
+			}
+
+			@media only screen and (max-width:776px) {
+				.about-page {
+					flex-direction:column;
+					align-items:center;
+					padding:40px 20px 40px;
+				}
+
+				.article-box {
+					width:90%;
+					margin:40px 0 60px;
+				}
+				.chart-box {
+					min-width:300px;
+
+				}
+
+				.projects-list > li {
+					font-size:15px;
+				}
+			}
+
+			@media only screen and (max-width:500px)  {
+				.about-page {
+					padding:30px 20px 40px;
+				}
+
+				.article-box {
+					width:90%;
+					margin:20px 0 30px;
+				}
+				.chart-box {
+					min-width:90%;
+				}
+				.article > h2 {
+					font-size:30px;
+					width:123px;
+				}
+
+				.article > h2::after {
+					font-size:11px;
+				}
+				.chart > h2 {
+					font-size:30px;
+					width:124px;
+				}
+
+				.chart > h2::after {
+					font-size:11px;
+				}
+				.projects-page {
+					padding:0 20px 40px;
+				}
+
+				.projects-page h2 {
+					font-size:30px;
+					width:100px;
+				}
+
+				.projects-page h2::after {
+					font-size:11px;
+				}
+
+
+			}
+
+			@media only screen and (max-width:400px) {
+				.article > p {
+					padding-left:0;
+				}
+
+				.name-box > h2 {
+					font-size:32px;
+				}
+
+				.sub-state {
+					font-size:16px;
+				}
+
+				.btn-box > button {
+	        background:#FE1B68;
+	        border-radius:6px;
+	        border:none;
+	        color:white;
+	        width:80px;
+
+	        margin:25px 10px 80px;
+	        padding:10px 0;
+
+					font-size:15px;
+
+	      }
+			}
+
+
+
 		</style>
 
 	</head>
@@ -513,7 +619,7 @@
 					</div>
 					<div class="footer-box">
 						<img src="./indexpics/phonelogo.svg" alt="">
-						<a href="#" onclick="getNumber()">Get My Number!</a>
+						<a onclick="getNumber(this)">Get My Number!</a>
 					</div>
 				</div>
 				<div class="final-statements">

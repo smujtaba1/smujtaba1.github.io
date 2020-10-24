@@ -159,4 +159,9 @@ let all_list =
 
   }
 
+
+  function getNumber(element) {
+
+    element.innerHTML="(773) 616-2391";
+  }
   generate_all();
