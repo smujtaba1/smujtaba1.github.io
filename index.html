@@ -108,7 +108,7 @@
         font-weight:bold;
       }
 
-      .btn-box > button {
+      .btn-box > a {
         background:#FE1B68;
         border-radius:6px;
         border:none;
@@ -116,7 +116,11 @@
         width:100px;
         font-size:18px;
         margin:25px 10px 80px;
-        padding:10px 0;
+        padding:10px 10px;
+				display:inline-block;
+				text-align: center;
+				font-family:Segoe UI;
+				text-decoration:none;
       }
 
       .about-page {
@@ -191,23 +195,27 @@
       }
 
       .chart-box {
-        width:50%;
+				min-width:50%:
         display:flex;
+				flex-wrap:wrap;
         justify-content: center;
         align-items: center;
+
       }
 
       .chart-box .envelope {
         background:#FE6185;
         transform:rotate(-3deg);
         transform-origin:center;
-        width:95%;
+				width:100%;
+
         display:flex;
         justify-content:center;
         align-items:center;
       }
       .chart {
-        width:100%;
+
+
         transform:rotate(3deg);
         transform-origin:center;
         background:linear-gradient(to bottom left,#3A6C85,#173F53);
@@ -236,8 +244,8 @@
       }
 
       #myChart {
-        width:100%;
-        height:100%;
+
+
       }
 
 			.projects-page {
@@ -428,7 +436,8 @@
 	      }
 
 				.chart-box {
-					min-width:350px;
+
+
 				}
 			}
 
@@ -444,7 +453,7 @@
 					margin:40px 0 60px;
 				}
 				.chart-box {
-					min-width:300px;
+
 
 				}
 
@@ -455,6 +464,7 @@
 
 			@media only screen and (max-width:500px)  {
 				.landing-page {
+					background:pink;
 					min-height:20px;
 				}
 
@@ -476,7 +486,8 @@
 					margin:20px 0 30px;
 				}
 				.chart-box {
-					min-width:90%;
+
+					max-width:90%;
 				}
 				.article > h2 {
 					font-size:30px;
@@ -485,6 +496,10 @@
 
 				.article > h2::after {
 					font-size:11px;
+				}
+
+				.chart{
+
 				}
 				.chart > h2 {
 					font-size:30px;
@@ -507,6 +522,32 @@
 					font-size:11px;
 				}
 
+				.footer {
+					align-items: flex-start;
+				}
+
+				.footer-main-box {
+					margin-left:20px;
+					display:flex;
+					flex-direction:column;
+					align-items: flex-start;
+				}
+
+				.footer-box {
+					display:flex;
+					flex-direction:row;
+
+				}
+
+				.footer-box > img {
+					height:40px;
+					margin-bottom:10px;
+					margin-right:20px;
+				}
+
+				.final-statements {
+					align-items: flex-start;
+				}
 
 			}
 
@@ -523,7 +564,7 @@
 					font-size:16px;
 				}
 
-				.btn-box > button {
+				.btn-box > a {
 	        background:#FE1B68;
 	        border-radius:6px;
 	        border:none;
@@ -558,13 +599,13 @@
             <h2>Seemaab Mujtaba</h2>
             <div class="sub-state">I Make Websites</div>
             <div class="btn-box">
-              <button type="button" name="button">About</button>
-              <button type="button" name="button">Projects</button>
+              <a href=#about-page>About</a>
+              <a href=#projects-page>Projects</a>
             </div>
           </div>
         </div>
 			</section>
-      <section class="about-page">
+      <section class="about-page" id="about-page">
         <div class="article-box">
           <div class="envelope">
             <div class="article" id="article">
@@ -601,7 +642,7 @@
           </div>
         </div>
       </section>
-      <section class="projects-page">
+      <section class="projects-page" id="projects-page">
         <div class="projects-main-box">
           <h2>projects</h2>
           <div class="projects-interface">
