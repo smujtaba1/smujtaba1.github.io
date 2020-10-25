@@ -328,7 +328,17 @@
 				width:100%;
 				background:#173F53;
 				opacity:.8;
+				transition:width .5s;
 			}
+
+			.project-card:hover .project-card-overlay {
+				width:0%;
+			}
+
+			.project-card:hover .project-btn {
+				width:80px;
+			}
+
 
 			.project-card > h3 {
 				background:#FE1B68;
@@ -373,7 +383,10 @@
 				background:#FE1B68;
 				margin:5px;
 				width:80px;
+				width:0;
+				overflow:hidden;
 				text-align:center;
+				transition:width .5s;
 			}
 
 			.project-btn > a {
