@@ -31,7 +31,7 @@ let myChart= new Chart(chart,
 
 let all_list =
   {
-    react:
+    'react':
     [
       {
         title:"Jet-Strike",
@@ -39,9 +39,16 @@ let all_list =
         site_link:"smujtaba1.github.io/jet-strike",
         github_link:"github.com/smujtaba1/jet-strike",
         image:"./indexpics/jetstrike.png"
+      },
+      {
+        title:"Easy Arabic",
+        description:"A flashcard learning tool for the Arabic alphabet.",
+        site_link:"smujtaba1.github.io/jet-strike",
+        github_link:"github.com/smujtaba1/jet-strike",
+        image:"./indexpics/jetstrike.png"
       }
     ],
-    html_css:[
+    'html_css':[
       {
         title:"Find the Pairs",
         description:"A simple game that trains your short-term memory",
@@ -50,7 +57,14 @@ let all_list =
         image:"./indexpics/findthepairs.png"
       }
     ],
-    vanilla_js:[
+    'vanilla_js':[
+		{
+        title:"Task List",
+        description:"The simplest to do list you can imagine.",
+        site_link:"smujtaba1.github.io/tasklist",
+        github_link:"github.com/smujtaba1/tasklist",
+        image:"./indexpics/findthepairs.png"
+      },
       {
         title:"Find the Pairs",
         description:"A simple game that trains your short-term memory",
@@ -61,26 +75,6 @@ let all_list =
     ]
 
   };
-
-  function generate_react (element){
-    erase_underline();
-    element.style.color="#FE1B68"
-    let mountable_list = [];
-    for(let i=0;i<all_list.vanilla_js.length;i++) {
-      mountable_list.push(
-        '<div class="project-card">' +
-          '<div class="project-card-overlay"></div>'+
-          '<img src=' + all_list.react[i].image + ' >' +
-          '<h3>' + all_list.react[i].title + '</h3>' +
-          '<div class="project-card-btn-box">' +
-            '<div class="project-btn"><a href=https://' + all_list.react[i].website_link+ '>Launch</a></div>' +
-            '<div class="project-btn"><a href=https://' + all_list.react[i].github_link + '>View Code</a></div>' +
-          '</div>' +
-        '</div>'
-      )
-    }
-    document.querySelector('.projects-container').innerHTML=mountable_list;
-  }
 
   function generate_all (element){
     let option_list=document.querySelector('.projects-list');
@@ -108,60 +102,51 @@ let all_list =
     document.querySelector('.projects-container').innerHTML = mountable_list.join('');
   }
 
-  function generate_html_css (element){
+  function generate_sublist(element,directory) {
     erase_underline();
     element.style.color="#FE1B68"
     let mountable_list = [];
-    for(let i=0;i<all_list.html_css.length;i++) {
+    for(let i=0;i<all_list[directory].length;i++) {
       mountable_list.push(
         '<div class="project-card">' +
           '<div class="project-card-overlay"></div>'+
-          '<img src=' + all_list.html_css[i].image + ' >' +
-          '<h3>' + all_list.html_css[i].title + '</h3>' +
+          '<img src=' + all_list[directory][i].image + ' >' +
+          '<h3>' + all_list[directory][i].title + '</h3>' +
           '<div class="project-card-btn-box">' +
-            '<div class="project-btn"><a href=https://' + all_list.html_css[i].website_link+ '>Launch</a></div>' +
-            '<div class="project-btn"><a href=https://' + all_list.html_css[i].github_link + '>View Code</a></div>' +
+            '<div class="project-btn"><a href=https://' + all_list[directory][i].site_link+ '>Launch</a></div>' +
+            '<div class="project-btn"><a href=https://' + all_list[directory][i].github_link + '>View Code</a></div>' +
           '</div>' +
         '</div>'
       )
     }
-    document.querySelector('.projects-container').innerHTML=mountable_list;
-  }
-
-  function generate_vanilla_js (element){
-    erase_underline();
-    element.style.color="#FE1B68"
-    let mountable_list = [];
-    for(let i=0;i<all_list.vanilla_js.length;i++) {
-      mountable_list.push(
-        '<div class="project-card">' +
-          '<div class="project-card-overlay"></div>'+
-          '<img src=' + all_list.vanilla_js[i].image + ' >' +
-          '<h3>' + all_list.vanilla_js[i].title + '</h3>' +
-          '<div class="project-card-btn-box">' +
-            '<div class="project-btn"><a href=https://' + all_list.vanilla_js[i].website_link+ '>Launch</a></div>' +
-            '<div class="project-btn"><a href=https://' + all_list.vanilla_js[i].github_link + '>View Code</a></div>' +
-          '</div>' +
-        '</div>'
-      )
-    }
-    document.querySelector('.projects-container').innerHTML=mountable_list;
+    document.querySelector('.projects-container').innerHTML=mountable_list.join("");
   }
 
   function erase_underline() {
-
     let option_list=document.querySelector('.projects-list');
-    console.log(option_list)
     for (let li=0;li<option_list.querySelectorAll("li").length;li++) {
       option_list.querySelectorAll("li")[li].style.color='#0084C4';
-      console.log("FDSFD")
     }
-
   }
 
 
   function getNumber(element) {
-
     element.innerHTML="(773) 616-2391";
   }
+
   generate_all();
+
+
+
+
+
+
+function testerJS(){
+  let myList=[1,2,3,4];
+  myList.forEach((item, i) => {
+
+  });
+
+  console.log(myList)
+}
+testerJS();
