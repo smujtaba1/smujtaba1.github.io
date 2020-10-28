@@ -135,18 +135,3 @@ let all_list =
   }
 
   generate_all();
-
-
-
-
-
-
-function testerJS(){
-  let myList=[1,2,3,4];
-  myList.forEach((item, i) => {
-
-  });
-
-  console.log(myList)
-}
-testerJS();
