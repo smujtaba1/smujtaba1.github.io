@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="31" height="22.5" viewBox="0 0 31 22.5">
+  <g id="Group_43" data-name="Group 43" transform="translate(-540 -371)">
+    <g id="Group_42" data-name="Group 42" transform="translate(540 371)">
+      <rect id="Rectangle_80" data-name="Rectangle 80" width="27" height="8" rx="1" transform="translate(2 2)" fill="#fff"/>
+      <text id="FOR" transform="translate(11 8)" fill="#2d27c1" font-size="5" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">FOR</tspan></text>
+      <text id="RENT" transform="translate(7 16)" fill="#fff" font-size="7" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">RENT</tspan></text>
+      <g id="Rectangle_81" data-name="Rectangle 81" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1">
+        <rect width="31" height="18" rx="1" stroke="none"/>
+        <rect x="0.5" y="0.5" width="30" height="17" rx="0.5" fill="none"/>
+      </g>
+    </g>
+    <line id="Line_10" data-name="Line 10" y2="5" transform="translate(549.586 388.5)" fill="none" stroke="#fff" stroke-width="1"/>
+    <line id="Line_11" data-name="Line 11" y2="5" transform="translate(561.384 388.5)" fill="none" stroke="#fff" stroke-width="1"/>
+  </g>
+</svg>
