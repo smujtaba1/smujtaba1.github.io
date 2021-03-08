@@ -1,0 +1,182 @@
+.posters {
+    display:grid;
+    grid-template-columns:100%;
+    grid-template-rows:repeat(auto-fill,1fr);
+    grid-row-gap:40px;
+}
+
+.poster {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:1fr;
+    border-radius:20px;
+    box-shadow:0 0 20px 0px #9F9F9F;
+    height:30vw;
+    max-height:290px;
+}
+
+.poster-image {
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size: auto 70%,cover;				
+}
+
+.pimg1  {
+    background-image:url('../blue.svg'),linear-gradient(to left,#46ADF2,#96EE8C 80%);
+    
+}
+
+.pimg2  {
+    background-image:url('../construction.svg'),linear-gradient(to left, #FE835C, #A375FF);
+    
+}
+
+.pimg3  {
+    background-image:url('../car.svg'),linear-gradient(to left,#46DCB3, #C41F1F);
+}
+
+.pimg4 {
+    background-image:url('../pub.svg'),linear-gradient(to left,#ECD542,#E1649E);
+}
+
+.pimg5 {
+    background-image:url('../insurance.svg'),linear-gradient(to left,#4843EB,#FF618D);
+}
+
+.pimg6 {
+    background-image:url('../technology.svg'),linear-gradient(to left,#2F376A,#DC3B51);
+}
+
+.pimg1,.pimg3, .pinf2, .pimg4, .pinf5, .pinf6 {
+    border-radius:20px 0 0 20px;
+}
+
+.pinf1, .pinf3, .pimg2, .pinf4, .pimg5, .pimg6 {
+    border-radius:0 20px 20px 0;
+}
+
+ .pinf1 >a, .pinf1 >a:visited{
+    background-image:linear-gradient(to left,#46ADF2,#96EE8C 80%);
+    color:white;
+ }
+
+ .pinf2 >a, .pinf2 >a:visited{
+    background-image:linear-gradient(to left, #FE835C, #A375FF);
+    color:white;
+ }
+
+ .pinf3 >a, .pinf3 >a:visited{
+    background-image:linear-gradient(to left,#46DCB3, #C41F1F);
+    color:white;
+ }
+
+ .pinf4 >a, .pinf4 >a:visited{
+    background-image:linear-gradient(to left,#ECD542,#E1649E);
+    color:white;
+ }
+
+ .pinf5 >a, .pinf5 >a:visited{
+    background-image:linear-gradient(to left,#4843EB,#FF618D);
+    color:white;
+ }
+ 
+ .pinf6 >a, .pinf6 >a:visited{
+    background-image:linear-gradient(to left,#2F376A,#DC3B51);
+    color:white;
+ }
+ 
+.thirdheader {
+    font-size:2.5rem;
+    line-height:1em;
+    margin-bottom:5px;
+    text-align:center;
+    font-family:var(--seriffont);
+    font-weight:normal;
+}
+
+
+.poster-info {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    background:white;
+    padding:10px;
+}
+
+.poster-info >a, .poster-info >a:visited {
+    color:white;
+    text-decoration: none;
+}
+
+.poster-info >a:hover, .poster-info >a:visited:hover {
+    color:black;
+}
+
+.poster-info >span {
+    font-size:1.25rem;
+    color:var(--grey);
+    font-family:var(--spanfont);
+    text-align:center;
+}
+
+.poster-info >a {
+    box-sizing:border-box;
+    padding:.5rem 2rem;
+    font-size:1rem;
+    display:inline-block;
+    border-radius:1em;
+    margin-top:1rem;
+}
+
+@media screen and (max-width: 1399px) {
+	
+}
+
+@media screen and (max-width: 1199px) {
+	
+}
+
+@media screen and (max-width: 991px) {
+
+}
+
+@media screen and (max-width: 767px) {
+	.secondheader {
+        font-size:2.4rem;
+        margin-bottom:1em;
+    }
+
+    .secondheader::after {
+        width:38px;
+        
+    }
+
+    .thirdheader {
+        font-size:2rem;
+    }
+
+    .poster {
+        display:grid;
+        grid-template-columns:1fr;
+        grid-template-rows:1fr 1fr;
+        max-width:100%;
+        min-height:400px;
+    }
+
+    .poster-image {
+        grid-row:1/2;
+    }
+
+    .poster-image {
+        border-radius:15px 15px 0 0;
+    }
+
+    .poster-info {
+        border-radius:0 0 15px 15px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    
+}

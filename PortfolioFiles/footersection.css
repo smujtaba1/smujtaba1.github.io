@@ -1,0 +1,50 @@
+@media screen and (max-width: 1399px) {
+	
+}
+
+@media screen and (max-width: 1199px) {
+	
+}
+
+@media screen and (max-width: 991px) {
+
+}
+
+@media screen and (max-width: 767px) {
+	.foot {
+        font-size:2rem;
+        padding-bottom:30px;
+        margin-top:6em;
+        line-height:1em;
+    }
+    
+    .footbox {
+        display:flex;
+        width:auto;
+        margin-top:.2em;
+        align-items:flex-start;
+        flex-direction: column;
+        justify-content:center;
+    }
+    
+    .footinfo {
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top:.6em;
+    }
+    
+    
+    .footinfo >span {
+        font-size:1rem;
+        margin-top:0;
+        margin-left:10px;
+        
+    }
+}
+
+@media screen and (max-width: 575px) {
+
+}
+
+
