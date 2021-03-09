@@ -3,13 +3,43 @@
 }
 
 .hero-navbar {
-    text-align:right;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    padding:10px 0;
 }
 
+.hero-navbar-dotbox{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+}
+
+.hero-navbar-dotbox-dot {
+    height:24px;
+    width:24px;
+    border-radius:50%;
+}
+
+.hero-navbar-dotbox-dot:nth-child(1){
+    background:#DCE6F5;
+}
+
+.hero-navbar-dotbox-dot:nth-child(2){
+    background:#DCFFE0;
+}
+
+.hero-navbar-dotbox-dot:nth-child(3){
+    background:#F6E4FF;
+}
+
+
+
+
+
 .hero-navbar-list {
-    padding:10px;
+
     box-sizing: border-box;
-    padding-right:0;
+    
 }
 
 .hero-navbar li {
@@ -125,6 +155,11 @@
 }
 
 @media screen and (max-width: 767px) {
+    .hero-navbar-dotbox-dot {
+        height:20px;
+        width:20px;
+        border-radius:50%;
+    }
 
     .hero-navbar-list li >a:link{
         font-size:20px;
