@@ -29,7 +29,7 @@
 }
 
 .hero-navbar-dotbox-dot:nth-child(3){
-    background:#F6E4FF;
+    background:#F2DBFE;
 }
 
 
@@ -131,6 +131,22 @@
 .hero-poster svg{
     min-height:100%;
     max-width:100%;
+}
+
+#arm {
+    transform-box:fill-box;
+    transform-origin:bottom right;
+    animation:armWave .7s linear alternate infinite;
+}
+
+
+@keyframes armWave {
+    0% {
+        transform:rotate(0deg);
+    }
+    100%{
+        transform:rotate(20deg);
+    }
 }
 
 @media screen and (max-width: 1399px) {
