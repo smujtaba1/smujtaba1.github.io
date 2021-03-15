@@ -9,6 +9,7 @@
 		<link href="PortfolioFiles/herosection.css" rel="stylesheet">
 		<link href="PortfolioFiles/projectsection.css" rel="stylesheet">
 		<link href="PortfolioFiles/footersection.css" rel="stylesheet">
+		<link href="PortfolioFiles/cardsection.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Suranna&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
@@ -71,35 +72,6 @@
 				bottom:-.1em;
 			}
 
-			.cards {
-				display:flex;
-				justify-content: space-between;
-				align-items:flex-end;
-			}
-
-			.card {
-				min-width:76px;
-				width:12%;
-				display:flex;
-				flex-direction:column;
-				justify-content: flex-start;
-				align-items:center;
-			}
-
-			.card:nth-child(odd) {
-				margin-bottom:3.5rem;
-			}
-
-			.card >img {
-				width:100%;
-			}
-
-			.card >span {
-				font-family:var(--spanfont);
-				font-size:1.25rem;
-				margin-top:1em;
-				text-align:center;
-			}
 
 			@media screen and (max-width: 1199px) {
 				
@@ -113,56 +85,11 @@
 				}
 			}
 			
-			@media screen and (max-width: 575px) {
-				
-				.cards {
-				display:flex;
-				justify-content: space-between;
-				align-items:flex-end;
-				justify-items: center;
-				display:grid;
-				grid-template-columns:1fr 1fr 1fr;
-				grid-template-rows:1fr auto 1fr;
-				grid-column-gap:6vw;
-				}
-
-				.card {
-					min-width:69px;
-					max-width:104px;
-					width:20vw;
-					display:flex;
-					flex-direction:column;
-					justify-content: flex-start;
-					align-items:center;
-				}
-
-				.card:nth-child(odd) {
-					margin-bottom:0;
-				}
-
-				.card:nth-child(1) {
-					grid-area:1/1/2/2;
-				}
-				.card:nth-child(2) {
-					grid-area:3/1/4/2;
-					align-self: start;
-				}
-				.card:nth-child(3) {
-					grid-area:2/2/3/3;
-				}
-				.card:nth-child(4) {
-					grid-area:3/3/4/4;
-					align-self: start;
-				}
-				.card:nth-child(5) {
-					grid-area:1/3/2/4;
-				}
-			}
 		</style>
 	</head>
 	<body>
-		<div class="hero wrapper">
-			<nav class="hero-navbar">
+		<div class="hero">
+			<nav class="hero-navbar wrapper">
 				<div class="hero-navbar-dotbox">
 					<div class="hero-navbar-dotbox-dot"></div>
 					<div class="hero-navbar-dotbox-dot"></div>
@@ -177,7 +104,7 @@
 				</ul>
 			</nav>
 			<div class="hero-main">
-				<div class="hero-main-box">
+				<div class="hero-main-box wrapper">
 					<div class="hero-intro">
 						<h1 class="hero-intro-name">Seemaab Mujtaba</h1>
 						<div class="hero-intro-box">
@@ -269,11 +196,7 @@
 							<path d="m311.68 557.12-4.411-2.331 19.619-37.126a9.269 9.269 0 0 0-7.946-13.6l-20.589-0.554 0.134-4.988 20.589 0.554a14.258 14.258 0 0 1 12.222 20.915z" fill="#858cf6" data-name="Path 47"/>
 							<path d="m264.26 557.12-19.62-37.126a14.258 14.258 0 0 1 12.222-20.914l20.59-0.554 0.134 4.988-20.589 0.554a9.268 9.268 0 0 0-7.945 13.6l19.619 37.125z" fill="#858cf6" data-name="Path 48"/>
 							<ellipse transform="rotate(-62.122)" cx="-299.43" cy="547.38" rx="9.355" ry="29.8" fill="#2f2e41" data-name="Ellipse 43"/>
-						   </svg>
-						   
-						  
-						  
-						  
+						</svg>
 					</div>
 				</div>				
 			</div>
