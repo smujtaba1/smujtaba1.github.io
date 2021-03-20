@@ -138,18 +138,53 @@
 #arm {
     transform-box:fill-box;
     transform-origin:bottom right;
-    animation:armWave .4s linear alternate infinite;
+    animation:armWave .6s linear alternate infinite;
 }
 
 
 @keyframes armWave {
     0% {
-        transform:rotate(-20deg);
+        transform:rotate(-10deg);
     }
     100%{
-        transform:rotate(50deg);
+        transform:rotate(20deg);
     }
 }
+
+#eyeball {
+    
+}
+
+#eye {
+
+    
+    
+    animation:eyeMovement 2s linear infinite;
+    
+}
+
+@keyframes eyeMovement {
+    0% {
+        transform:translateY(0);
+    }
+
+    25% {
+        transform:translateY(1%);
+    }
+
+    50% {
+        transform:translateY(1%);
+    }
+
+    75% {
+        transform:translateY(0);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
 
 @media screen and (max-width: 1399px) {
 	
