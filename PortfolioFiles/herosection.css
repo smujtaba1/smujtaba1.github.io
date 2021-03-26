@@ -1,13 +1,13 @@
 .hero {
     min-height:100vh;
-    
 }
 
 .hero-navbar {
     display:flex;
     justify-content:space-between;
     align-items: center;
-    padding:10px 0;
+    padding-top:10px;
+    padding-bottom:10px;
 }
 
 .hero-navbar-dotbox{
@@ -33,14 +33,8 @@
     background:#F2DBFE;
 }
 
-
-
-
-
 .hero-navbar-list {
-
     box-sizing: border-box;
-    
 }
 
 .hero-navbar li {
@@ -62,7 +56,6 @@
     display:flex;
     min-height:calc(100vh - 51px);
     align-items: center;
-  
 }
 
 .hero-main-box {
@@ -151,16 +144,10 @@
     }
 }
 
-#eyeball {
-    
-}
+
 
 #eye {
-
-    
-    
     animation:eyeMovement 2s linear infinite;
-    
 }
 
 @keyframes eyeMovement {
@@ -186,9 +173,6 @@
 }
 
 
-@media screen and (max-width: 1399px) {
-	
-}
 
 @media screen and (max-width: 1199px) {
 	.hero-intro-name {
@@ -235,6 +219,7 @@
     .hero-poster {
         text-align:center;
         grid-row:1;
+        
     }
 
     .hero-poster svg{
