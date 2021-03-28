@@ -72,21 +72,20 @@ function animateShape() {
     projectLink.appendChild(shape)
     let startTime=new Date().getTime();
     let totalLeft=Math.random()*100;
-    let incrementer=(totalLeft-50)/60
+    let incrementer=(totalLeft-50)/100
 
     function animateFunc(){
         let currentTime=new Date().getTime();
         if(parseInt(shape.style.top)==-100){
             shape.remove()
-         
             return
         }
-        if (currentTime-startTime<5){
+        if (currentTime-startTime<30){
             window.requestAnimationFrame(animateFunc)
         }else{
             startTime=currentTime
             shape.style.opacity-=.01
-            shape.style.top=parseInt(shape.style.top)-1+"px";
+            shape.style.top=parseInt(shape.style.top)-1.5+"px";
             shape.style.left=parseFloat(shape.style.left)+incrementer+"%";
             window.requestAnimationFrame(animateFunc)
         }
@@ -99,7 +98,7 @@ animateShape()
 
 function makeAnimation() {
     let currentTiming=new Date().getTime();
-    if(currentTiming-startTiming<250) {
+    if(currentTiming-startTiming<500) {
         requestAnimationFrame(makeAnimation)
     }else {
         animateShape()
