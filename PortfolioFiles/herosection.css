@@ -44,7 +44,7 @@
 }
 
 .hero-navbar-dotbox-dot:nth-child(2){
-    background:rgb(255, 247, 142);
+    background:#ee6269;
     position:relative;
 }
 
@@ -60,21 +60,13 @@
     transform:translate(-50%,-50%);
 }
 
-.hero-navbar-dotbox-dot:nth-child(3){
-    background:#ee6269;
-    position:relative;
-}
-
-.hero-navbar-dotbox-dot:nth-child(3) >div {
-    height:70%;
-    width:70%;
-    background:#1a0969;
-    border-radius: 50%;
-    margin:auto;
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
+.inner-circle {
+    color:white;
+    text-align: center;
+    font-size:12px;
+    
+    font-family:Dosis;
+    font-weight:800;
 }
 
 .hero-navbar-list {
