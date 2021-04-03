@@ -47,11 +47,11 @@
     background-image:url('../technology.svg'),linear-gradient(to left,#2F376A,#DC3B51);
 }
 
-.pimg1,.pimg3, .pinf2, .pimg4, .pinf5, .pinf6 {
+.pimg1,.pimg3, .pimg4, .pimg2, .pinf5, .pinf6 {
     border-radius:20px 0 0 20px;
 }
 
-.pinf1, .pinf3, .pimg2, .pinf4, .pimg5, .pimg6 {
+.pinf1, .pinf2, .pinf3, .pinf4, .pimg5, .pimg6 {
     border-radius:0 20px 20px 0;
 }
 
