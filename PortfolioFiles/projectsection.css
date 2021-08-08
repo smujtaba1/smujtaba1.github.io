@@ -21,67 +21,48 @@
     background-size: auto 70%,cover;				
 }
 
-.pimg1  {
+.pimg1 {
+    background-image:url('../technology.svg'),linear-gradient(to left,#2F376A,#DC3B51);
+}
+
+.pimg2  {
     background-image:url('../blue.svg'),linear-gradient(to left,#46ADF2,#96EE8C 80%);
     
 }
 
-.pimg2  {
-    background-image:url('../construction.svg'),linear-gradient(to left, #FE835C, #A375FF);
-    
-}
-
-.pimg3  {
-    background-image:url('../car.svg'),linear-gradient(to left,#46DCB3, #C41F1F);
-}
-
-.pimg4 {
-    background-image:url('../pub.svg'),linear-gradient(to left,#ECD542,#E1649E);
-}
-
-.pimg5 {
+.pimg3 {
     background-image:url('../insurance.svg'),linear-gradient(to left,#4843EB,#FF618D);
 }
 
-.pimg6 {
-    background-image:url('../technology.svg'),linear-gradient(to left,#2F376A,#DC3B51);
+
+.poster:nth-child(odd) >.poster-info {
+    border-radius:20px 0px 0px 20px;
 }
 
-.pimg1,.pimg3, .pimg4, .pimg2, .pinf5, .pinf6 {
-    border-radius:20px 0 0 20px;
+.poster:nth-child(even) >.poster-info {
+    border-radius:0px 20px 20px 0px;
 }
 
-.pinf1, .pinf2, .pinf3, .pinf4, .pimg5, .pimg6 {
-    border-radius:0 20px 20px 0;
+.poster:nth-child(odd) >.poster-image {
+    border-radius: 0px 20px 20px 0px;
+}
+
+.poster:nth-child(even) >.poster-image {
+    border-radius: 20px 0px 0px 20px;
 }
 
  .pinf1 >a, .pinf1 >a:visited{
-    background-image:linear-gradient(to left,#46ADF2,#96EE8C 80%);
+    background-image:linear-gradient(to left,#2F376A,#DC3B51);
     color:white;
  }
 
  .pinf2 >a, .pinf2 >a:visited{
-    background-image:linear-gradient(to left, #FE835C, #A375FF);
+    background-image:linear-gradient(to left,#46ADF2,#96EE8C 80%);
     color:white;
  }
 
  .pinf3 >a, .pinf3 >a:visited{
-    background-image:linear-gradient(to left,#46DCB3, #C41F1F);
-    color:white;
- }
-
- .pinf4 >a, .pinf4 >a:visited{
-    background-image:linear-gradient(to left,#ECD542,#E1649E);
-    color:white;
- }
-
- .pinf5 >a, .pinf5 >a:visited{
     background-image:linear-gradient(to left,#4843EB,#FF618D);
-    color:white;
- }
- 
- .pinf6 >a, .pinf6 >a:visited{
-    background-image:linear-gradient(to left,#2F376A,#DC3B51);
     color:white;
  }
  
